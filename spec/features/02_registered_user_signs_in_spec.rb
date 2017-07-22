@@ -1,4 +1,5 @@
 require "rails_helper"
+
 # As a registered user
 # I want to sign in
 # So that I can view my trips

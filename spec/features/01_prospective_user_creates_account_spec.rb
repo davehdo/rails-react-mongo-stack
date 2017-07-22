@@ -1,4 +1,5 @@
 require "rails_helper"
+
 # As a prospective user
 # I want to create an account
 # So that I can post new bakeries and review them

@@ -8,7 +8,18 @@ class TripsIndexContainer extends Component {
     }
   }
 
+  componentDidMount() {
+    fetch('/api/v1/trips.json')
+    .then(response => {
+      return response.json()
+    })
+    .then(body => {
+      this.setState({ trips: body })
+    })
+  }
+
   render() {
+    console.log(this.state.trips)
     return (
       <div>
         <h2>hello from TripsIndexContainer</h2>

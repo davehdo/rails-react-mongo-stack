@@ -5,4 +5,8 @@ class Api::V1::TripsController < ApplicationController
 
     render json: Trip.all, adapter: :json
   end
+
+  def show
+    render json: Restaurants.all, 
+  end
 end

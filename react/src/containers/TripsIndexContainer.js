@@ -23,6 +23,41 @@ class TripsIndexContainer extends Component {
     return (
       <div>
         <h2>hello from TripsIndexContainer</h2>
+        <h4>Name of Trip</h4>
+        <h3>add a trip</h3>
+        <form>
+          <label>name of trip
+            <input
+              name=''
+              type='text'
+            />
+          </label>
+
+          <label>City
+            <input
+              name=''
+              type='text'
+            />
+          </label>
+
+          <label>State
+            <input
+              name=''
+              type='text'
+            />
+          </label>
+          
+          <label>Date
+            <input
+              name=''
+              type='text'
+            />
+          </label>
+
+          <div className="button-group">
+            <input className="button" type="submit" value="Submit" />
+          </div>
+        </form>
       </div>
     )
   }

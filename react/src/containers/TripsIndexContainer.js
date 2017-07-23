@@ -17,7 +17,9 @@ class TripsIndexContainer extends Component {
   }
 
   componentDidMount() {
-    fetch('/api/v1/trips.json')
+    fetch('/api/v1/trips.json', {
+      credentials: 'include' //fulfills credential requirements for user session
+    })
     .then(response => {
       return response.json()
     })
@@ -46,8 +48,8 @@ class TripsIndexContainer extends Component {
       type: 'POST',
       data: formPayload,
       success: (response) => {
-        let responseData = JSON.parse(response)
-        this.setState({ trips: [...this.state.trips, responseData.trips] })
+        console.log(response)
+        this.setState({ trips: [...this.state.trips, response.trip] })
       }
     });
   }

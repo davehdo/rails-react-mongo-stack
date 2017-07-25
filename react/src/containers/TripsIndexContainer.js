@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+import TripTile from '../components/TripTile'
 
 class TripsIndexContainer extends Component {
   constructor(props) {
@@ -14,6 +14,7 @@ class TripsIndexContainer extends Component {
   this.handleChange = this.handleChange.bind(this)
   this.handleClearForm = this.handleClearForm.bind(this)
   this.handleFormSubmit = this.handleFormSubmit.bind(this)
+  this.addNewTrip = this.addNewTrip.bind(this)
   }
 
   componentDidMount() {
@@ -34,25 +35,15 @@ class TripsIndexContainer extends Component {
     this.setState({ [name]: value })
   }
 
-  addNewTrip(formPayload) {
-    // fetch('/api/v1/trips', {
-    //   method: 'POST',
-    //   body: JSON.stringify(formPayload)
-    // })
-    // .then(response => response.json())
-    // .then(responseData => {
-    //   this.setState({ trips: [...this.state.trips, responseData.trips] })
-    // })
-
-    $.ajax({ url: '/api/v1/trips',
-      type: 'POST',
-      data: formPayload,
-      success: (response) => {
-        console.log(response)
-        this.setState({ trips: [...this.state.trips, response.trip] })
-      }
-    });
-  }
+  handleClearForm(event) {
+    event.preventDefault();
+    this.setState({
+      newName: '',
+      newCity: '',
+      newState: '',
+      newDate: ''
+    })
+  };
 
   handleFormSubmit(event) {
     event.preventDefault();
@@ -65,70 +56,89 @@ class TripsIndexContainer extends Component {
     this.handleClearForm(event);
   };
 
-  handleClearForm(event) {
-    event.preventDefault();
-    this.setState({
-      newName: '',
-      newCity: '',
-      newState: '',
-      newDate: ''
+  addNewTrip(formPayload) {
+    fetch('/api/v1/trips', {
+      headers: {
+        "content-type": "application/json",
+        "accept": "application/json"
+      },
+      method: 'POST',
+      body: JSON.stringify(formPayload),
+      credentials: 'include'
     })
-  };
+    .then(response => response.json())
+    .then(responseData => {
+      console.log(responseData)
+      this.setState({ trips: [...this.state.trips, responseData.trip] })
+
+    // $.ajax({ url: '/api/v1/trips',
+    //   type: 'POST',
+    //   data: formPayload,
+    //   success: (response) => {
+    //     console.log(response)
+    //     this.setState({ trips: [...this.state.trips, response.trip] })
+    //   }
+    // });
+    })
+  }
 
   render() {
-    console.log(this.state.trips)
+    let trips = this.state.trips.map(trip => {
+      return (
+        <TripTile
+          key={trip.id}
+          trip={trip}
+          handleTripDelete={this.handleTripDelete}
+        />
+      )
+    })
 
     return (
       <div>
+        <h1>My Food Adventures</h1>
 
-      {this.state.trips.map(trip => {
-        return (
-          <div>
-            <Link key={trip.id} to={`/trips/${trip.id}`}>{trip.name}</Link>
-          </div>
-        )
-      })}
+          {trips}
 
+          <h3>Add a Trip</h3>
+          <form onSubmit={this.handleFormSubmit}>
+            <label onChange={this.handleChange}>Trip Name
+              <input
+                name='newName'
+                type='text'
+                value={this.state.newName}
+              />
+            </label>
 
-        <h3>add a trip</h3>
-        <form onSubmit={this.handleFormSubmit}>
-          <label onChange={this.handleChange}>Name of Trip
-            <input
-              name='newName'
-              type='text'
-              value={this.state.newName}
-            />
-          </label>
+            <label onChange={this.handleChange}>City
+              <input
+                name='newCity'
+                type='text'
+                value={this.state.newCity}
+              />
+            </label>
 
-          <label onChange={this.handleChange}>City
-            <input
-              name='newCity'
-              type='text'
-              value={this.state.newCity}
-            />
-          </label>
+            <label onChange={this.handleChange}>State
+              <input
+                name='newState'
+                type='text'
+                value={this.state.newState}
+              />
+            </label>
 
-          <label onChange={this.handleChange}>State
-            <input
-              name='newState'
-              type='text'
-              value={this.state.newState}
-            />
-          </label>
+            <label onChange={this.handleChange}>Date
+              <input
+                name='newDate'
+                type='text'
+                value={this.state.newDate}
+              />
+            </label>
 
-          <label onChange={this.handleChange}>Date
-            <input
-              name='newDate'
-              type='text'
-              value={this.state.newDate}
-            />
-          </label>
+            <div className="button-group">
+              <input className="button" type="submit" value="Submit" />
+            </div>
+          </form>
+        </div>
 
-          <div className="button-group">
-            <input className="button" type="submit" value="Submit" />
-          </div>
-        </form>
-      </div>
     )
   }
 }

@@ -4,10 +4,10 @@
     <title>Hungry Travels</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/css/foundation.min.css">
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
@@ -20,6 +20,7 @@
 
       <div class="top-bar-right">
         <ul class="menu">
+          <li><%= link_to 'Home', root_path %></li>
           <% if user_signed_in? %>
             <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
             <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
@@ -34,6 +35,8 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <%= yield %>
+    <div class="row">
+      <%= yield %>
+    </div>
   </body>
 </html>

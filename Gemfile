@@ -1,12 +1,15 @@
 source 'https://rubygems.org/'
 
+gem 'active_model_serializers'
+gem 'devise'
 gem 'rails', '~> 5.1.2'
 gem 'pg', '~> 0.15'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'listen'
-gem 'devise'
+gem 'http'
+gem 'rails-assets-foundation', source: 'https://rails-assets.org'
 
 group :development, :test do
   gem 'capybara'

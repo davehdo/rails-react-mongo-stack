@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
 import RestaurantTile from '../components/RestaurantTile';
 import SuggestedTile from '../components/SuggestedTile';
 
@@ -39,7 +39,7 @@ class TripShowContainer extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      console.log(body)
+      this.props.router.push('/')
     })
   }
 
@@ -92,7 +92,7 @@ class TripShowContainer extends Component {
         </div>
 
         <Link to="/trips">Home</Link><br/>
-        <Link onClick={this.handleTripDelete} to="/">Delete Trip</Link>
+        <Link onClick={this.handleTripDelete}>Delete Trip</Link>
       </div>
     )
   }

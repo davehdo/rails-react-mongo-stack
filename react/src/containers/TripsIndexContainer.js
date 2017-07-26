@@ -96,8 +96,7 @@ class TripsIndexContainer extends Component {
     return (
       <div>
         <h1>My Food Adventures</h1>
-
-          {trips}
+        {trips}
 
           <h3>Add a Trip</h3>
           <form onSubmit={this.handleFormSubmit}>

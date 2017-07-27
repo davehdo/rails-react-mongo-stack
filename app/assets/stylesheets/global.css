@@ -5,3 +5,7 @@ body {
 .top-bar {
   background-color: #E6E6E6;
 }
+
+.main {
+  background-color: pink;
+}

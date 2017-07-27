@@ -98,6 +98,7 @@ class TripsIndexContainer extends Component {
         <h1>My Food Adventures</h1>
         {trips}
 
+        <div className="form-container">
           <h3>Add a Trip</h3>
           <form onSubmit={this.handleFormSubmit}>
             <label onChange={this.handleChange}>Trip Name
@@ -137,7 +138,7 @@ class TripsIndexContainer extends Component {
             </div>
           </form>
         </div>
-
+      </div>
     )
   }
 }

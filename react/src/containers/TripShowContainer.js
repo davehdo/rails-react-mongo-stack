@@ -9,23 +9,45 @@ class TripShowContainer extends Component {
     this.state = {
       trip: {},
       restaurants: [],
-      suggested: []
+      suggested: [],
+      yelpData: []
     }
     this.handleRestaurantDelete = this.handleRestaurantDelete.bind(this);
     this.handleTripDelete = this.handleTripDelete.bind(this);
   }
 
   componentDidMount() {
-    let tripId = this.props.params.id
-    fetch(`/api/v1/trips/${tripId}`)
+    let payload = {
+      location: {
+        city: "Boston",
+        state: "MA"
+      }
+    }
+
+    fetch(`/yelp`,
+      {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }
+    )
     .then(response => response.json())
-    .then(body => {
-      this.setState({
-        trip: body.trip,
-        restaurants: body.restaurants
-        // suggested: body.businesses
-      })
+    .then(responseData => {
+      console.log(responseData)
+      this.setState({ yelpData: responseData })
     })
+
+    // let tripId = this.props.params.id
+    // fetch(`/api/v1/trips/${tripId}`)
+    // .then(response => response.json())
+    // .then(body => {
+    //   this.setState({
+    //     trip: body.trip,
+    //     restaurants: body.restaurants
+    //     // suggested: body.businesses
+    //   })
+    // })
   }
 
   handleRestaurantDelete() {

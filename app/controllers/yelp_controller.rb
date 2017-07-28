@@ -2,21 +2,22 @@ class YelpController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
   skip_before_action :verify_authenticity_token
 
-  def create
+  def index
+  end
 
-    binding.pry
+  def create
+    trip = Trip.find(params[:tripId])
 
     url = "https://api.yelp.com/v3/businesses/search"
     query = {
-      location: "Boston, MA",
+      location: "#{trip.city}, #{trip.state}",
       term: "food",
       range: 5,
-      limit: 3
+      limit: 2
     }
 
     response = HTTP.auth("Bearer #{ENV["YOUR_TOKEN"]}").get(url, params: query)
-
-    body = response.body.to_json
+    body = JSON.parse(response.body)
 
     render json: body
   end

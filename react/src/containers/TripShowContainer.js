@@ -9,23 +9,19 @@ class TripShowContainer extends Component {
     this.state = {
       trip: {},
       restaurants: [],
-      suggested: [],
-      yelpData: []
+      suggested: []
     }
+    this.handleSearch = this.handleSearch.bind(this);
     this.handleRestaurantDelete = this.handleRestaurantDelete.bind(this);
     this.handleTripDelete = this.handleTripDelete.bind(this);
   }
 
   componentDidMount() {
     let payload = {
-      location: {
-        city: "Boston",
-        state: "MA"
-      }
+      tripId: this.props.params.id
     }
 
-    fetch(`/yelp`,
-      {
+    fetch(`/yelp`, {
         method: 'POST',
         credentials: 'same-origin',
         headers: { 'Content-Type': 'application/json' },
@@ -35,7 +31,7 @@ class TripShowContainer extends Component {
     .then(response => response.json())
     .then(responseData => {
       console.log(responseData)
-      this.setState({ yelpData: responseData })
+      this.setState({ suggested: responseData.businesses })
     })
 
     // let tripId = this.props.params.id
@@ -50,6 +46,28 @@ class TripShowContainer extends Component {
     // })
   }
 
+  handleSearch(payload) {
+  //   let payload = {
+  //     location: {
+  //       city: "Boston",
+  //       state: "MA"
+  //     }
+  //   }
+  //
+  //   fetch(`/yelp?state=${}&city=${}`,
+  //     {
+  //       method: 'GET',
+  //       credentials: 'same-origin',
+  //       headers: { 'Content-Type': 'application/json' }
+  //     }
+  //   )
+  //   .then(response => response.json())
+  //   .then(responseData => {
+  //     console.log(responseData)
+  //     this.setState({ yelpData: responseData })
+  //   })
+  }
+
   handleRestaurantDelete() {
     console.log('in handle delete')
   }
@@ -61,7 +79,7 @@ class TripShowContainer extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      this.props.router.push('/')
+      this.props.router.push('/') //redirect to index
     })
   }
 
@@ -79,7 +97,7 @@ class TripShowContainer extends Component {
     let suggested = this.state.suggested.map(restaurant => {
       return (
         <SuggestedTile
-          key={restaurant.name}
+          key={restaurant.id}
           restaurant={restaurant}
         />
       )
@@ -93,7 +111,6 @@ class TripShowContainer extends Component {
         <h3>Your Restaurants</h3>
         {restaurants}
 
-        <h3>Suggested Restaurants</h3>
         {suggested}
 
         <div className="callout">

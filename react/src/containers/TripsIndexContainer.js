@@ -11,10 +11,10 @@ class TripsIndexContainer extends Component {
       newState: '',
       newDate: ''
     }
-  this.handleChange = this.handleChange.bind(this)
-  this.handleClearForm = this.handleClearForm.bind(this)
-  this.handleFormSubmit = this.handleFormSubmit.bind(this)
-  this.addNewTrip = this.addNewTrip.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+    this.handleClearForm = this.handleClearForm.bind(this)
+    this.handleFormSubmit = this.handleFormSubmit.bind(this)
+    this.addNewTrip = this.addNewTrip.bind(this)
   }
 
   componentDidMount() {

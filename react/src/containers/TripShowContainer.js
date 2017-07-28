@@ -11,11 +11,19 @@ class TripShowContainer extends Component {
       restaurants: [],
       suggested: []
     }
+    this.getRestaurants = this.getRestaurants.bind(this);
+    this.getSuggested = this.getSuggested.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
     this.handleRestaurantDelete = this.handleRestaurantDelete.bind(this);
     this.handleTripDelete = this.handleTripDelete.bind(this);
   }
 
   componentDidMount() {
+    this.getRestaurants()
+    this.getSuggested()
+  }
+
+  getRestaurants() {
     let tripId = this.props.params.id
     fetch(`/api/v1/trips/${tripId}`)
     .then(response => response.json())
@@ -23,9 +31,48 @@ class TripShowContainer extends Component {
       this.setState({
         trip: body.trip,
         restaurants: body.restaurants
-        // suggested: body.businesses
       })
     })
+  }
+
+  getSuggested() {
+    let payload = {
+      tripId: this.props.params.id
+    }
+    fetch(`/yelp`, {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }
+    )
+    .then(response => response.json())
+    .then(responseData => {
+      console.log(responseData)
+      this.setState({ suggested: responseData.businesses })
+    })
+  }
+
+  handleSearch(payload) {
+  //   let payload = {
+  //     location: {
+  //       city: "Boston",
+  //       state: "MA"
+  //     }
+  //   }
+  //
+  //   fetch(`/yelp?state=${}&city=${}`,
+  //     {
+  //       method: 'GET',
+  //       credentials: 'same-origin',
+  //       headers: { 'Content-Type': 'application/json' }
+  //     }
+  //   )
+  //   .then(response => response.json())
+  //   .then(responseData => {
+  //     console.log(responseData)
+  //     this.setState({ yelpData: responseData })
+  //   })
   }
 
   handleRestaurantDelete() {
@@ -39,7 +86,7 @@ class TripShowContainer extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      this.props.router.push('/')
+      this.props.router.push('/') //redirect to index
     })
   }
 
@@ -57,7 +104,7 @@ class TripShowContainer extends Component {
     let suggested = this.state.suggested.map(restaurant => {
       return (
         <SuggestedTile
-          key={restaurant.name}
+          key={restaurant.id}
           restaurant={restaurant}
         />
       )
@@ -68,10 +115,8 @@ class TripShowContainer extends Component {
         <h1>{this.state.trip.name}</h1>
         <p>{this.state.trip.city}, {this.state.trip.state}</p>
 
-        <h3>Your Restaurants</h3>
         {restaurants}
 
-        <h3>Suggested Restaurants</h3>
         {suggested}
 
         <div className="callout">

@@ -136,7 +136,7 @@ class TripShowContainer extends Component {
           </form>
         </div>
 
-        <Link to="/trips">Home</Link><br/>
+        <Link to="/">Back</Link><br/>
         <Link onClick={this.handleTripDelete}>Delete Trip</Link>
       </div>
     )

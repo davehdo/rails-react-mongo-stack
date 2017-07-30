@@ -1,0 +1,29 @@
+#main .callout {
+  background-color: #F3F3F3;
+  border: none;
+}
+
+#main img {
+  width: 100%;
+}
+
+#main h3 {
+  color: #E5474B;
+}
+
+#main a.button {
+  margin-top: 1em;
+  background-color: #F7F7F7;
+  color: #E5474B;
+  border-width: 1px;
+  border-color: #E5474B;
+  border-radius: 5px;
+  transition: background-color 1s;
+}
+
+  #main a.button:hover {
+    background-color: #fceced;
+    color: #E5474B;
+    border-width: 1px;
+    border-color: #E5474B;
+  }

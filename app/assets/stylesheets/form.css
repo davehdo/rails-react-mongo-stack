@@ -2,10 +2,21 @@
   background-color: #E5474B;
 }
 
-label {
-  color: white;
+.form-container label {
+  color: #FFFFFF;
 }
 
-div.column.form-container {
-  
+.form-container input.button {
+  background-color: #E5474B;
+  border-width: 1px;
+  border-radius: 5px;
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+  transition: background-color 1s;
+}
+
+.form-container input.button:hover {
+  background-color: #fceced;
+  border-width: 1px;
+  border-color: #FFFFFF;
 }

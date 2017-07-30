@@ -4,7 +4,13 @@ const SuggestedTile = props => {
 
   let handleAddClick = (event) => {
     let payload = {
-      name: props.name
+      name: props.name,
+      address: props.address,
+      city: props.city,
+      state: props.state,
+      zip: props.zip,
+      url: props.url,
+      image_url: props.image_url
     };
     props.addSuggested(payload)
   };

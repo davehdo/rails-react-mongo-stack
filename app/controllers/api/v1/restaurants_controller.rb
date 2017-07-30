@@ -1,14 +1,13 @@
-class Api::V1::TripsController < ApplicationController
+class Api::V1::RestaurantsController < ApplicationController
   # before_action :authenticate_user! #, only: [:index]
   skip_before_action :verify_authenticity_token
 
   def create
-
-    body = request.body.read
-    parsed = JSON.parse(body)
-    restaurant = Restaurant.new(parsed)
-    tripId = Trip.find(params[:id])
-    restaurant.trip = tripId
+    # body = request.body.read
+    # parsed = JSON.parse(body)
+    restaurant = Restaurant.new(restaurant_params)
+    trip = Trip.find(params[:tripId])
+    restaurant.trip = trip
 
     if restaurant.save
       render json: restaurant, adapter: :json

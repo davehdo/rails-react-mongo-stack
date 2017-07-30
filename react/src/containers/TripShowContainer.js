@@ -76,22 +76,19 @@ class TripShowContainer extends Component {
   }
 
   addSuggested(payload) {
-    console.log("in add suggested!")
     payload.tripId = this.props.params.id,
-    console.log(payload)
 
-    // fetch(`/api/v1/restaurants`, {
-    //     method: 'POST',
-    //     credentials: 'same-origin',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify(payload)
-    //   }
-    // )
-    // .then(response => response.json())
-    // .then(responseData => {
-    //   console.log(responseData)
-    //   // this.setState({ restaurants: [...this.state.restaurants, responseData] })
-    // })
+    fetch(`/api/v1/restaurants`, {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }
+    )
+    .then(response => response.json())
+    .then(responseData => {
+      this.setState({ restaurants: [...this.state.restaurants, responseData] })
+    })
   }
 
   handleRestaurantDelete() {
@@ -129,6 +126,12 @@ class TripShowContainer extends Component {
           rating={restaurant.rating}
           addressTop={restaurant.location.display_address[0]}
           addressBottom={restaurant.location.display_address[1]}
+          address={restaurant.location.address1}
+          city={restaurant.location.city}
+          state={restaurant.location.state}
+          zip={restaurant.location.zip_code}
+          url={restaurant.url}
+          image_url={restaurant.image_url}
           addSuggested={this.addSuggested}
           restaurant={restaurant}
         />

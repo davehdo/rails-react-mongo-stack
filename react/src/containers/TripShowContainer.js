@@ -77,9 +77,8 @@ class TripShowContainer extends Component {
 
   addSuggested(payload) {
     console.log("in add suggested!")
-    console.log(this.props.params.id)
-    // payload.tripId = this.props.params.id,
-    // console.log(payload)
+    payload.tripId = this.props.params.id,
+    console.log(payload)
 
     // fetch(`/api/v1/restaurants`, {
     //     method: 'POST',

@@ -1,6 +1,14 @@
 import React from 'react';
 
 const SuggestedTile = props => {
+
+  let handleAddClick = (event) => {
+    let payload = {
+      name: props.name
+    };
+    props.addSuggested(payload)
+  };
+
   return(
     <div className="small-6 medium-4 large-2 columns end">
       <div className="callout">
@@ -11,7 +19,7 @@ const SuggestedTile = props => {
 
         <h6>{props.restaurant.name}</h6>
 
-        <button type="button" onClick={props.addSuggested}>Add</button>
+        <button type="button" onClick={handleAddClick}>Add</button>
 
       </div>
     </div>

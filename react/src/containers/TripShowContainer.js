@@ -14,6 +14,7 @@ class TripShowContainer extends Component {
     this.getRestaurants = this.getRestaurants.bind(this);
     this.getSuggested = this.getSuggested.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
+    this.addSuggested = this.addSuggested.bind(this);
     this.handleRestaurantDelete = this.handleRestaurantDelete.bind(this);
     this.handleTripDelete = this.handleTripDelete.bind(this);
   }
@@ -48,7 +49,6 @@ class TripShowContainer extends Component {
     )
     .then(response => response.json())
     .then(responseData => {
-      console.log(responseData)
       this.setState({ suggested: responseData.businesses })
     })
   }
@@ -73,6 +73,26 @@ class TripShowContainer extends Component {
   //     console.log(responseData)
   //     this.setState({ yelpData: responseData })
   //   })
+  }
+
+  addSuggested(payload) {
+    console.log("in add suggested!")
+    console.log(this.props.params.id)
+    // payload.tripId = this.props.params.id,
+    // console.log(payload)
+
+    // fetch(`/api/v1/restaurants`, {
+    //     method: 'POST',
+    //     credentials: 'same-origin',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify(payload)
+    //   }
+    // )
+    // .then(response => response.json())
+    // .then(responseData => {
+    //   console.log(responseData)
+    //   // this.setState({ restaurants: [...this.state.restaurants, responseData] })
+    // })
   }
 
   handleRestaurantDelete() {
@@ -110,6 +130,7 @@ class TripShowContainer extends Component {
           rating={restaurant.rating}
           addressTop={restaurant.location.display_address[0]}
           addressBottom={restaurant.location.display_address[1]}
+          addSuggested={this.addSuggested}
           restaurant={restaurant}
         />
       )

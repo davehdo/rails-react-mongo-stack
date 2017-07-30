@@ -11,6 +11,8 @@ const SuggestedTile = props => {
 
         <h6>{props.restaurant.name}</h6>
 
+        <button type="button" onClick={props.addSuggested}>Add</button>
+
       </div>
     </div>
 

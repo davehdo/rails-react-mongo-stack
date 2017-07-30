@@ -2,10 +2,16 @@ import React from 'react';
 
 const SuggestedTile = props => {
   return(
+    <div className="small-6 medium-4 large-2 columns end">
+      <div className="callout">
 
-    <div className="callout">
-      <img src={props.restaurant.image_url} alt={props.restaurant.name} height="42" width="42"/>
-      <h4>{props.restaurant.name}</h4>
+        <div className="circle">
+          <img src={props.restaurant.image_url} alt={props.restaurant.name} />
+        </div>
+
+        <h6>{props.restaurant.name}</h6>
+
+      </div>
     </div>
 
   )

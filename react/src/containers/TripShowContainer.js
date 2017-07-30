@@ -105,6 +105,11 @@ class TripShowContainer extends Component {
       return (
         <SuggestedTile
           key={restaurant.id}
+          name={restaurant.name}
+          image={restaurant.image_url}
+          rating={restaurant.rating}
+          addressTop={restaurant.location.display_address[0]}
+          addressBottom={restaurant.location.display_address[1]}
           restaurant={restaurant}
         />
       )
@@ -117,7 +122,11 @@ class TripShowContainer extends Component {
 
         {restaurants}
 
-        {suggested}
+        <div id="suggested-container">
+          <div className="row">
+            {suggested}
+          </div>
+        </div>
 
         <div className="callout">
           <p>Search by name/type of food</p>

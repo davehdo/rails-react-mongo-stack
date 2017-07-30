@@ -95,10 +95,23 @@ class TripsIndexContainer extends Component {
 
     return (
       <div>
-        <h1>My Food Adventures</h1>
-        {trips}
+        <section id="banner">
+          <div className="inner">
+            <header>
+              <h1>Hungry Travels</h1>
+              <p>An app for traveling food lovers</p>
+            </header>
+            <a href="#main" className="more scrolly">Learn More</a>
+          </div>
+        </section>
 
-        <div className="form-container">
+        <div id="main" className="column">
+          <div className="row">
+            {trips}
+          </div>
+        </div>
+
+        <div className="column form-container">
           <h3>Add a Trip</h3>
           <form onSubmit={this.handleFormSubmit}>
             <label onChange={this.handleChange}>Trip Name

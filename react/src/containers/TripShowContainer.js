@@ -14,6 +14,7 @@ class TripShowContainer extends Component {
     this.getRestaurants = this.getRestaurants.bind(this);
     this.getSuggested = this.getSuggested.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
+    this.addSuggested = this.addSuggested.bind(this);
     this.handleRestaurantDelete = this.handleRestaurantDelete.bind(this);
     this.handleTripDelete = this.handleTripDelete.bind(this);
   }
@@ -48,7 +49,6 @@ class TripShowContainer extends Component {
     )
     .then(response => response.json())
     .then(responseData => {
-      console.log(responseData)
       this.setState({ suggested: responseData.businesses })
     })
   }
@@ -73,6 +73,22 @@ class TripShowContainer extends Component {
   //     console.log(responseData)
   //     this.setState({ yelpData: responseData })
   //   })
+  }
+
+  addSuggested(payload) {
+    payload.tripId = this.props.params.id,
+
+    fetch(`/api/v1/restaurants`, {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }
+    )
+    .then(response => response.json())
+    .then(responseData => {
+      this.setState({ restaurants: [...this.state.restaurants, responseData] })
+    })
   }
 
   handleRestaurantDelete() {
@@ -105,6 +121,18 @@ class TripShowContainer extends Component {
       return (
         <SuggestedTile
           key={restaurant.id}
+          name={restaurant.name}
+          image={restaurant.image_url}
+          rating={restaurant.rating}
+          addressTop={restaurant.location.display_address[0]}
+          addressBottom={restaurant.location.display_address[1]}
+          address={restaurant.location.address1}
+          city={restaurant.location.city}
+          state={restaurant.location.state}
+          zip={restaurant.location.zip_code}
+          url={restaurant.url}
+          image_url={restaurant.image_url}
+          addSuggested={this.addSuggested}
           restaurant={restaurant}
         />
       )
@@ -117,7 +145,11 @@ class TripShowContainer extends Component {
 
         {restaurants}
 
-        {suggested}
+        <div id="suggested-container">
+          <div className="row">
+            {suggested}
+          </div>
+        </div>
 
         <div className="callout">
           <p>Search by name/type of food</p>

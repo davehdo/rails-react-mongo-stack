@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const TripTile = props => {
+
   return(
     <div className="small-12 medium-4 columns end">
       <div className="callout">

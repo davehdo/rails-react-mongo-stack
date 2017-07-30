@@ -1,0 +1,21 @@
+#suggested-container {
+  background-color: #F3F3F3;
+}
+
+#suggested-container div.row {
+  padding-top: 1em;
+}
+
+#suggested-container .circle {
+  width: 3em;
+  height: 3em;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 1px solid black;
+  margin: auto;
+}
+
+.circle img {
+  width: 100%;
+  height: 100%;
+}

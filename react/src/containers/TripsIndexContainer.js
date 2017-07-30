@@ -112,44 +112,48 @@ class TripsIndexContainer extends Component {
         </div>
 
         <div className="column form-container">
-          <h3>Add a Trip</h3>
-          <form onSubmit={this.handleFormSubmit}>
-            <label onChange={this.handleChange}>Trip Name
-              <input
-                name='newName'
-                type='text'
-                value={this.state.newName}
-              />
-            </label>
+          <div className="row small-12 medium-8">
 
-            <label onChange={this.handleChange}>City
-              <input
-                name='newCity'
-                type='text'
-                value={this.state.newCity}
-              />
-            </label>
+              <h3>Add a Trip</h3>
+              <form onSubmit={this.handleFormSubmit}>
+                <label onChange={this.handleChange}>Trip Name
+                  <input
+                    name='newName'
+                    type='text'
+                    value={this.state.newName}
+                  />
+                </label>
 
-            <label onChange={this.handleChange}>State
-              <input
-                name='newState'
-                type='text'
-                value={this.state.newState}
-              />
-            </label>
+                <label onChange={this.handleChange}>City
+                  <input
+                    name='newCity'
+                    type='text'
+                    value={this.state.newCity}
+                  />
+                </label>
 
-            <label onChange={this.handleChange}>Date
-              <input
-                name='newDate'
-                type='text'
-                value={this.state.newDate}
-              />
-            </label>
+                <label onChange={this.handleChange}>State
+                  <input
+                    name='newState'
+                    type='text'
+                    value={this.state.newState}
+                  />
+                </label>
 
-            <div className="button-group">
-              <input className="button" type="submit" value="Submit" />
-            </div>
-          </form>
+                <label onChange={this.handleChange}>Date
+                  <input
+                    name='newDate'
+                    type='text'
+                    value={this.state.newDate}
+                  />
+                </label>
+
+                <div className="button-group">
+                  <input className="button" type="submit" value="Submit" />
+                </div>
+              </form>
+
+          </div>
         </div>
       </div>
     )

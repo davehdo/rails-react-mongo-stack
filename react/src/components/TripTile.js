@@ -7,13 +7,11 @@ const TripTile = props => {
       <div className="callout">
 
         <h3>{props.trip.name}</h3>
-        
-        <div className="image">
-          <img src="pic03.jpg" alt=""/>
-        </div>
+
+        <img src="pic03.jpg" alt=""/>
 
         <div className="text-center">
-          <Link className="button" to={`/trips/${props.trip.id}`}>Learn More</Link>
+          <Link className="button" to={`/trips/${props.trip.id}`}>View</Link>
         </div>
 
       </div>

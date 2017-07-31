@@ -99,7 +99,6 @@ class TripShowContainer extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      console.log(body)
       let newRestaurants = this.state.restaurants.filter(restaurant => {
         return restaurant.id !== body.id
       })

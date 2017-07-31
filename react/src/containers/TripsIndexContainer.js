@@ -70,15 +70,6 @@ class TripsIndexContainer extends Component {
     .then(responseData => {
       console.log(responseData)
       this.setState({ trips: [...this.state.trips, responseData.trip] })
-
-    // $.ajax({ url: '/api/v1/trips',
-    //   type: 'POST',
-    //   data: formPayload,
-    //   success: (response) => {
-    //     console.log(response)
-    //     this.setState({ trips: [...this.state.trips, response.trip] })
-    //   }
-    // });
     })
   }
 

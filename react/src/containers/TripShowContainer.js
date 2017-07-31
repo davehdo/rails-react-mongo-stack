@@ -91,8 +91,20 @@ class TripShowContainer extends Component {
     })
   }
 
-  handleRestaurantDelete() {
-    console.log('in handle delete')
+  handleRestaurantDelete(payload) {
+    // console.log("in restaurantdelete")
+    // console.log(payload) //id: 5
+    //
+    // let restaurantId = payload.id
+    // console.log
+
+    // fetch(`/api/v1/trips/${restaurantId}`, {
+    //   method: 'DELETE'
+    // })
+    // .then(response => response.json())
+    // .then(body => {
+    //   console.log(body)
+    // })
   }
 
   handleTripDelete() {
@@ -110,9 +122,10 @@ class TripShowContainer extends Component {
     let restaurants = this.state.restaurants.map(restaurant => {
       return (
         <RestaurantTile
-          key={restaurant.name}
-          restaurant={restaurant}
+          key={restaurant.id}
+          id={restaurant.id}
           handleDelete={this.handleRestaurantDelete}
+          restaurant={restaurant}
         />
       )
     })

@@ -16,6 +16,10 @@ class Api::V1::RestaurantsController < ApplicationController
     end
   end
 
+  def destroy
+    restaurant = Restaurant.destroy()
+    render json: { restaurant: restaurant }
+  end
 
   private
 

@@ -92,19 +92,19 @@ class TripShowContainer extends Component {
   }
 
   handleRestaurantDelete(payload) {
-    // console.log("in restaurantdelete")
-    // console.log(payload) //id: 5
-    //
-    // let restaurantId = payload.id
-    // console.log
+    let restaurantId = payload.id
 
-    // fetch(`/api/v1/trips/${restaurantId}`, {
-    //   method: 'DELETE'
-    // })
-    // .then(response => response.json())
-    // .then(body => {
-    //   console.log(body)
-    // })
+    fetch(`/api/v1/restaurants/${restaurantId}`, {
+      method: 'DELETE'
+    })
+    .then(response => response.json())
+    .then(body => {
+      console.log(body)
+      let newRestaurants = this.state.restaurants.filter(restaurant => {
+        return restaurant.id !== body.id
+      })
+      this.setState({ restaurants: newRestaurants })
+    })
   }
 
   handleTripDelete() {
@@ -119,10 +119,10 @@ class TripShowContainer extends Component {
   }
 
   render() {
-    let restaurants = this.state.restaurants.map(restaurant => {
+    let restaurants = this.state.restaurants.map((restaurant, index) => {
       return (
         <RestaurantTile
-          key={restaurant.id}
+          key={index}
           id={restaurant.id}
           handleDelete={this.handleRestaurantDelete}
           restaurant={restaurant}
@@ -130,10 +130,10 @@ class TripShowContainer extends Component {
       )
     })
 
-    let suggested = this.state.suggested.map(restaurant => {
+    let suggested = this.state.suggested.map((restaurant, index) => {
       return (
         <SuggestedTile
-          key={restaurant.id}
+          key={index}
           name={restaurant.name}
           image={restaurant.image_url}
           rating={restaurant.rating}

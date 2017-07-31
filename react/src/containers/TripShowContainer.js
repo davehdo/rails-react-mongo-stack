@@ -107,8 +107,6 @@ class TripShowContainer extends Component {
   }
 
   render() {
-    console.log("hello from TripShowContainer")
-
     let restaurants = this.state.restaurants.map(restaurant => {
       return (
         <RestaurantTile

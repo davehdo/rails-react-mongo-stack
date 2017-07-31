@@ -17,8 +17,8 @@ class Api::V1::RestaurantsController < ApplicationController
   end
 
   def destroy
-    restaurant = Restaurant.destroy()
-    render json: { restaurant: restaurant }
+    restaurant = Restaurant.destroy(params[:id])
+    render json: restaurant
   end
 
   private

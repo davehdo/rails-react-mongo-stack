@@ -23,8 +23,8 @@ class YelpController < ApplicationController
       body = JSON.parse(response.body)
       render json: body
     else
-      body = JSON.parse(response.body)
-      render json: body
+      # body = JSON.parse(response.body)
+      render json: response
       # {error: "There has been an error from the Yelp API"}
     end
   end

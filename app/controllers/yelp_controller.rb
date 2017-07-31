@@ -19,10 +19,13 @@ class YelpController < ApplicationController
     response = HTTP.auth("Bearer #{ENV["YOUR_TOKEN"]}").get(url, params: query)
 
     if response.status == 200
+      binding.pry
       body = JSON.parse(response.body)
       render json: body
     else
-      render json: {error: "There has been an error from the Yelp API"}
+      body = JSON.parse(response.body)
+      render json: body
+      # {error: "There has been an error from the Yelp API"}
     end
   end
 

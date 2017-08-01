@@ -8,22 +8,16 @@ describe('SuggestedTile', () => {
       address: '40 Brattle St',
       city: 'Cambridge',
       state: 'MA',
-      zip: '02138'
+      zip: '02138',
+      url: 'https://aldenandharlow.com',
+      image_url: 'https://aldenandharlow.com',
+      rating: 4.5
     }
 
   beforeEach(() => {
     wrapper = mount(
       <SuggestedTile
-        name='Alden and Harlow'
-        rating={4}
-        addressTop='40 Brattle St'
-        addressBottom='Cambridge, MA 02138'
-        address='40 Brattle St'
-        city='Cambridge'
-        state='MA'
-        zip='02138'
-        url='https://aldenandharlow.com'
-        image_url='https://image.com'
+        restaurant={data}
         addSuggested={() => {}}
       />
     );
@@ -33,13 +27,17 @@ describe('SuggestedTile', () => {
     expect(wrapper.find('img')).toBePresent();
   });
 
-  it('should render a h6 tag', () => {
+  it('should render two h6 tags', () => {
     expect(wrapper.find('h6')).toBePresent();
   });
 
-  it('should render a h6 tag with the name property value', () => {
-    expect(wrapper.find('h6').text()).toBe('Alden and Harlow');
-  });
+  it('should render the name', () => {
+    expect(wrapper.text()).toMatch('Alden and Harlow')
+  })
+
+  it('should render the rating', () => {
+    expect(wrapper.text()).toMatch('Rating: 4.5')
+  })
 
   it('should render a button tag', () => {
     expect(wrapper.find('button')).toBePresent();

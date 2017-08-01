@@ -1,25 +1,21 @@
 import RestaurantTile from '../../src/components/RestaurantTile';
 
 describe('RestaurantTile', () => {
-  let wrapper,
-    id,
-    name,
-    address,
-    city,
-    state,
-    zip,
-    handleDelete;
+  let wrapper;
+  let data = {
+    id: 1,
+    name: 'Alden and Harlow',
+    address: '40 Brattle St',
+    city: 'Cambridge',
+    state: 'MA',
+    zip: '02138'
+  }
 
   beforeEach(() => {
     wrapper = mount(
       <RestaurantTile
-        id={1}
-        name='Alden and Harlow'
-        address='40 Brattle St'
-        city='Cambridge'
-        state='MA'
-        zip='02138'
         handleDelete={() => {}}
+        restaurant={data}
       />
     );
   });

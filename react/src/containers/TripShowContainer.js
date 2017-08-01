@@ -123,6 +123,11 @@ class TripShowContainer extends Component {
         <RestaurantTile
           key={index}
           id={restaurant.id}
+          name={restaurant.name}
+          address={restaurant.address}
+          city={restaurant.city}
+          state={restaurant.state}
+          zip={restaurant.zip}
           handleDelete={this.handleRestaurantDelete}
           restaurant={restaurant}
         />

@@ -129,7 +129,6 @@ class TripShowContainer extends Component {
           state={restaurant.state}
           zip={restaurant.zip}
           handleDelete={this.handleRestaurantDelete}
-          restaurant={restaurant}
         />
       )
     })
@@ -139,7 +138,6 @@ class TripShowContainer extends Component {
         <SuggestedTile
           key={index}
           name={restaurant.name}
-          image={restaurant.image_url}
           rating={restaurant.rating}
           addressTop={restaurant.location.display_address[0]}
           addressBottom={restaurant.location.display_address[1]}
@@ -150,7 +148,6 @@ class TripShowContainer extends Component {
           url={restaurant.url}
           image_url={restaurant.image_url}
           addSuggested={this.addSuggested}
-          restaurant={restaurant}
         />
       )
     })

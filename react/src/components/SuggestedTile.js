@@ -20,10 +20,10 @@ const SuggestedTile = props => {
       <div className="callout">
 
         <div className="circle">
-          <img src={props.restaurant.image_url} alt={props.restaurant.name} />
+          <img src={props.image_url} alt={props.name} />
         </div>
 
-        <h6>{props.restaurant.name}</h6>
+        <h6>{props.name}</h6>
 
         <button type="button" onClick={handleAddClick}>Add</button>
 

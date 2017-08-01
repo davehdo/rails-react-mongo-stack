@@ -78,7 +78,8 @@ class TripsIndexContainer extends Component {
       return (
         <TripTile
           key={trip.id}
-          trip={trip}
+          id={trip.id}
+          name={trip.name}
           handleTripDelete={this.handleTripDelete}
         />
       )

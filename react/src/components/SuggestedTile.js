@@ -4,13 +4,13 @@ const SuggestedTile = props => {
 
   let handleAddClick = (event) => {
     let payload = {
-      name: props.name,
-      address: props.address,
-      city: props.city,
-      state: props.state,
-      zip: props.zip,
-      url: props.url,
-      image_url: props.image_url
+      name: props.restaurant.name,
+      address: props.restaurant.address,
+      city: props.restaurant.city,
+      state: props.restaurant.state,
+      zip: props.restaurant.zip,
+      url: props.restaurant.url,
+      image_url: props.restaurant.image_url
     };
     props.addSuggested(payload)
   };
@@ -20,10 +20,12 @@ const SuggestedTile = props => {
       <div className="callout">
 
         <div className="circle">
-          <img src={props.image_url} alt={props.name} />
+          <img src={props.restaurant.image_url} alt={props.restaurant.name} />
         </div>
 
-        <h6>{props.name}</h6>
+        <h6>{props.restaurant.name}</h6>
+        <h6>Rating: {props.restaurant.rating}</h6>
+        <a href={props.restaurant.url}>Learn More</a><br/>
 
         <button type="button" onClick={handleAddClick}>Add</button>
 

@@ -122,13 +122,8 @@ class TripShowContainer extends Component {
       return (
         <RestaurantTile
           key={index}
-          id={restaurant.id}
-          name={restaurant.name}
-          address={restaurant.address}
-          city={restaurant.city}
-          state={restaurant.state}
-          zip={restaurant.zip}
           handleDelete={this.handleRestaurantDelete}
+          restaurant={restaurant}
         />
       )
     })
@@ -137,17 +132,8 @@ class TripShowContainer extends Component {
       return (
         <SuggestedTile
           key={index}
-          name={restaurant.name}
-          rating={restaurant.rating}
-          addressTop={restaurant.location.display_address[0]}
-          addressBottom={restaurant.location.display_address[1]}
-          address={restaurant.location.address1}
-          city={restaurant.location.city}
-          state={restaurant.location.state}
-          zip={restaurant.location.zip_code}
-          url={restaurant.url}
-          image_url={restaurant.image_url}
           addSuggested={this.addSuggested}
+          restaurant={restaurant}
         />
       )
     })

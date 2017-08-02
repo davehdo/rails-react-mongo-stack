@@ -3,7 +3,6 @@ import SuggestedTile from '../../src/components/SuggestedTile';
 describe('SuggestedTile', () => {
     let wrapper;
     let data = {
-      id: 1,
       name: 'Alden and Harlow',
       address: '40 Brattle St',
       city: 'Cambridge',

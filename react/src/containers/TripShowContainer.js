@@ -169,10 +169,15 @@ class TripShowContainer extends Component {
         <h1>{this.state.trip.name}</h1>
         <p>{this.state.trip.city}, {this.state.trip.state}</p>
 
-        {restaurants}
+        <div id="saved-container">
+          <div className="row">
+            {restaurants}
+          </div>
+        </div>
 
         <div id="suggested-container">
           <div className="row">
+            <h4>Suggestions</h4>
             {suggested}
           </div>
         </div>

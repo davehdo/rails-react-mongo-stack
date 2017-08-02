@@ -20,5 +20,6 @@
 /app/assets/javascripts/bundle.js
 /react/coverage
 /coverage
+/node_modules
 
 .env

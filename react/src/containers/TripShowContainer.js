@@ -182,7 +182,7 @@ class TripShowContainer extends Component {
           </div>
         </div>
 
-        <div className="callout">
+        <div id="search-form" className="column">
           <p>Search</p>
           <form onSubmit={this.handleSearchSubmit}>
             <label onChange={this.handleChange}>Name/Food Type

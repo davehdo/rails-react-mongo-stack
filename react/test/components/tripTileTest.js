@@ -10,7 +10,7 @@ describe('TripTile', () => {
     wrapper = mount(
       <TripTile
         id={1}
-        name='Alden and Harlow'
+        name='Boston'
         addSuggested={() => {}}
       />
     );
@@ -21,7 +21,7 @@ describe('TripTile', () => {
   });
 
   it('should render a h3 tag with the name property value', () => {
-    expect(wrapper.find('h3').text()).toBe('Alden and Harlow');
+    expect(wrapper.find('h3').text()).toBe('Boston');
   });
 
   it('should render an img tag', () => {

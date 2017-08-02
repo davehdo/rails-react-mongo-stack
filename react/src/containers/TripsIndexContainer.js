@@ -68,7 +68,6 @@ class TripsIndexContainer extends Component {
     })
     .then(response => response.json())
     .then(responseData => {
-      console.log(responseData)
       this.setState({ trips: [...this.state.trips, responseData.trip] })
     })
   }

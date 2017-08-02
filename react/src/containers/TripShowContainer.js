@@ -54,26 +54,9 @@ class TripShowContainer extends Component {
     .then(responseData => {
       this.setState({ suggested: responseData.businesses })
     })
-
-    // let payload = {
-    //   tripId: this.props.params.id
-    // }
-    // fetch(`/yelp`, {
-    //     method: 'POST',
-    //     credentials: 'same-origin',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify(payload)
-    //   }
-    // )
-    // .then(response => response.json())
-    // .then(responseData => {
-    //   this.setState({ suggested: responseData.businesses })
-    // })
   }
 
   handleSearch(payload) {
-    console.log(payload)
-
     fetch(`/yelp`, {
         method: 'POST',
         credentials: 'same-origin',
@@ -85,20 +68,6 @@ class TripShowContainer extends Component {
     .then(responseData => {
       this.setState({ searchResults: responseData.businesses})
     })
-
-
-    // fetch(`/yelp?state=${}&city=${}`,
-    //   {
-    //     method: 'GET',
-    //     credentials: 'same-origin',
-    //     headers: { 'Content-Type': 'application/json' }
-    //   }
-    // )
-    // .then(response => response.json())
-    // .then(responseData => {
-    //   console.log(responseData)
-    //   this.setState({ yelpData: responseData })
-    // })
   }
 
   addSuggested(payload) {
@@ -165,7 +134,6 @@ class TripShowContainer extends Component {
   };
 
   render() {
-    console.log(this.state.searchResults)
     let restaurants = this.state.restaurants.map((restaurant, index) => {
       return (
         <RestaurantTile

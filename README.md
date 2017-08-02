@@ -1,3 +1,8 @@
+![Build Status](https://codeship.com/projects/d0b30d60-59bc-0135-70d7-0a5f2ff2ef9a/status?branch=master)
+![Code Climate](https://codeclimate.com/github/laurado/hungry-travels.png)
+[![Coverage Status](https://coveralls.io/repos/github/laurado/hungry-travels/badge.svg)](https://coveralls.io/github/laurado/hungry-travels)
+
+
 # README
 
 This repository has all the code necessary for starting a React on Rails application

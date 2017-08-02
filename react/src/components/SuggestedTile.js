@@ -5,10 +5,10 @@ const SuggestedTile = props => {
   let handleAddClick = (event) => {
     let payload = {
       name: props.restaurant.name,
-      address: props.restaurant.address,
-      city: props.restaurant.city,
-      state: props.restaurant.state,
-      zip: props.restaurant.zip,
+      address: props.restaurant.location.address1,
+      city: props.restaurant.location.city,
+      state: props.restaurant.location.state,
+      zip: props.restaurant.location.zip_code,
       url: props.restaurant.url,
       image_url: props.restaurant.image_url
     };

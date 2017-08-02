@@ -76,8 +76,7 @@ class TripShowContainer extends Component {
   }
 
   addSuggested(payload) {
-    payload.tripId = this.props.params.id,
-
+    payload.trip_id = this.props.params.id
     fetch(`/api/v1/restaurants`, {
         method: 'POST',
         credentials: 'same-origin',

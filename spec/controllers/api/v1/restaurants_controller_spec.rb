@@ -7,7 +7,7 @@ RSpec.describe Api::V1::RestaurantsController, type: :controller do
       trip = FactoryGirl.create(:trip, user: user)
 
       post_json = {
-        tripId: trip.id,
+        trip_id: trip.id,
         name: "Felipe's",
         address: "12345 Milk Street",
         city: "Cambridge",

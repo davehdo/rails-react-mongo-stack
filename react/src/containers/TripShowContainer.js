@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router';
 import RestaurantTile from '../components/RestaurantTile';
 import SuggestedTile from '../components/SuggestedTile';
+import SearchResultTile from '../components/SearchResultTile';
 
 class TripShowContainer extends Component {
   constructor(props) {
@@ -10,7 +11,8 @@ class TripShowContainer extends Component {
       trip: {},
       restaurants: [],
       suggested: [],
-      search: ''
+      search: '',
+      searchResults: []
     }
     this.getRestaurants = this.getRestaurants.bind(this);
     this.getSuggested = this.getSuggested.bind(this);
@@ -81,7 +83,7 @@ class TripShowContainer extends Component {
     )
     .then(response => response.json())
     .then(responseData => {
-      console.log(responseData)
+      this.setState({ searchResults: responseData.businesses})
     })
 
 
@@ -163,6 +165,7 @@ class TripShowContainer extends Component {
   };
 
   render() {
+    console.log(this.state.searchResults)
     let restaurants = this.state.restaurants.map((restaurant, index) => {
       return (
         <RestaurantTile
@@ -178,6 +181,16 @@ class TripShowContainer extends Component {
         <SuggestedTile
           key={index}
           addSuggested={this.addSuggested}
+          restaurant={restaurant}
+        />
+      )
+    })
+
+    let searchResults = this.state.searchResults.map((restaurant, index) => {
+      return (
+        <SearchResultTile
+          key={index}
+          addRestaurant={this.addSuggested}
           restaurant={restaurant}
         />
       )
@@ -212,6 +225,8 @@ class TripShowContainer extends Component {
             </div>
           </form>
         </div>
+
+        {searchResults}
 
         <Link to="/">Back</Link><br/>
         <Link onClick={this.handleTripDelete}>Delete Trip</Link>

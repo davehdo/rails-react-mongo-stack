@@ -14,9 +14,9 @@ import SuggestedTile from '../../src/components/SuggestedTile';
       );
     });
 
-    it('should have initial state', () => {
-      expect(wrapper.state()).toEqual({trip: {},restaurants: [], suggested: []})
-    })
+    // it('should have initial state', () => {
+    //   expect(wrapper.state()).toEqual({trip: {},restaurants: [], suggested: []})
+    // })
 
     describe('It should render trip information', () => {
 

@@ -30,7 +30,7 @@ class YelpController < ApplicationController
     query = {
       location: "#{trip.city}, #{trip.state}",
       term: "food, #{params[:search]}",
-      limit: 1
+      limit: 3
     }
 
     response = HTTP.auth("Bearer #{ENV["YOUR_TOKEN"]}").get(url, params: query)

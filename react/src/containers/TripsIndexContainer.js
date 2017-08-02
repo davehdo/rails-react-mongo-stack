@@ -80,7 +80,6 @@ class TripsIndexContainer extends Component {
           key={trip.id}
           id={trip.id}
           name={trip.name}
-          handleTripDelete={this.handleTripDelete}
         />
       )
     })

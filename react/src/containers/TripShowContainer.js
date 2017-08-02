@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router';
 import RestaurantTile from '../components/RestaurantTile';
 import SuggestedTile from '../components/SuggestedTile';
+import SearchResultTile from '../components/SearchResultTile';
 
 class TripShowContainer extends Component {
   constructor(props) {
@@ -9,7 +10,9 @@ class TripShowContainer extends Component {
     this.state = {
       trip: {},
       restaurants: [],
-      suggested: []
+      suggested: [],
+      search: '',
+      searchResults: []
     }
     this.getRestaurants = this.getRestaurants.bind(this);
     this.getSuggested = this.getSuggested.bind(this);
@@ -17,6 +20,9 @@ class TripShowContainer extends Component {
     this.addSuggested = this.addSuggested.bind(this);
     this.handleRestaurantDelete = this.handleRestaurantDelete.bind(this);
     this.handleTripDelete = this.handleTripDelete.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleClearForm = this.handleClearForm.bind(this);
+    this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -37,14 +43,11 @@ class TripShowContainer extends Component {
   }
 
   getSuggested() {
-    let payload = {
-      tripId: this.props.params.id
-    }
-    fetch(`/yelp`, {
-        method: 'POST',
+    fetch(`/yelp?tripId=${this.props.params.id}`,
+      {
+        method: 'GET',
         credentials: 'same-origin',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
+        headers: { 'Content-Type': 'application/json' }
       }
     )
     .then(response => response.json())
@@ -54,25 +57,17 @@ class TripShowContainer extends Component {
   }
 
   handleSearch(payload) {
-  //   let payload = {
-  //     location: {
-  //       city: "Boston",
-  //       state: "MA"
-  //     }
-  //   }
-  //
-  //   fetch(`/yelp?state=${}&city=${}`,
-  //     {
-  //       method: 'GET',
-  //       credentials: 'same-origin',
-  //       headers: { 'Content-Type': 'application/json' }
-  //     }
-  //   )
-  //   .then(response => response.json())
-  //   .then(responseData => {
-  //     console.log(responseData)
-  //     this.setState({ yelpData: responseData })
-  //   })
+    fetch(`/yelp`, {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }
+    )
+    .then(response => response.json())
+    .then(responseData => {
+      this.setState({ searchResults: responseData.businesses})
+    })
   }
 
   addSuggested(payload) {
@@ -116,6 +111,28 @@ class TripShowContainer extends Component {
     })
   }
 
+  handleChange(event) {
+    let value = event.target.value;
+    this.setState({ search: value })
+  }
+
+  handleClearForm(event) {
+    event.preventDefault();
+    this.setState({
+      search: ''
+    })
+  };
+
+  handleSearchSubmit(event) {
+    event.preventDefault();
+    let formPayload = {
+      trip_id: this.props.params.id,
+      search: this.state.search
+    }
+    this.handleSearch(formPayload);
+    this.handleClearForm(event);
+  };
+
   render() {
     let restaurants = this.state.restaurants.map((restaurant, index) => {
       return (
@@ -137,6 +154,16 @@ class TripShowContainer extends Component {
       )
     })
 
+    let searchResults = this.state.searchResults.map((restaurant, index) => {
+      return (
+        <SearchResultTile
+          key={index}
+          addRestaurant={this.addSuggested}
+          restaurant={restaurant}
+        />
+      )
+    })
+
     return (
       <div>
         <h1>{this.state.trip.name}</h1>
@@ -151,13 +178,13 @@ class TripShowContainer extends Component {
         </div>
 
         <div className="callout">
-          <p>Search by name/type of food</p>
-          <form>
-            <label>Name/Food Type
+          <p>Search</p>
+          <form onSubmit={this.handleSearchSubmit}>
+            <label onChange={this.handleChange}>Name/Food Type
               <input
                 name='search'
                 type='text'
-                value=''
+                value={this.state.search}
               />
             </label>
 
@@ -166,6 +193,8 @@ class TripShowContainer extends Component {
             </div>
           </form>
         </div>
+
+        {searchResults}
 
         <Link to="/">Back</Link><br/>
         <Link onClick={this.handleTripDelete}>Delete Trip</Link>

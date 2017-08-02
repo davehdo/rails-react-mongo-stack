@@ -1,0 +1,16 @@
+#saved-container {
+  background-color: #FFFFFF;
+}
+
+#saved-container div.row {
+  padding-top: 1em;
+}
+.saved {
+  background-color: #F3F3F3;
+}
+
+.saved img {
+  width: 100%;
+  height: 10em;
+  object-fit: cover;
+}

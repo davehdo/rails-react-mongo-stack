@@ -28,8 +28,8 @@ describe('RestaurantTile', () => {
     expect(wrapper.find('h4').text()).toBe('Alden and Harlow');
   });
 
-  it('should render two p tags', () => {
-    expect(wrapper.find('p').length).toBe(2);
+  it('should render a p tag', () => {
+    expect(wrapper.find('p')).toBePresent();
   });
 
   it('should render the address property value', () => {

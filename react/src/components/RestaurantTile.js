@@ -10,11 +10,17 @@ const RestaurantTile = props => {
   };
 
   return(
-    <div className="callout">
-      <h4>{props.restaurant.name}</h4>
-      <p>{props.restaurant.address}</p>
-      <p>{props.restaurant.city}, {props.restaurant.state} {props.restaurant.zip}</p>
-      <button onClick={handleRestaurantDelete}>Delete</button>
+    <div className="column small-12 medium-6 large-4 end">
+      <div className="callout saved">
+
+          <img src={props.restaurant.image_url} alt={props.restaurant.name} />
+
+        <h4>{props.restaurant.name}</h4>
+        <p>{props.restaurant.address}<br/>
+        {props.restaurant.city}, {props.restaurant.state} {props.restaurant.zip}</p>
+        <a href={props.restaurant.url}>Learn More</a><br/>
+        <button onClick={handleRestaurantDelete}>Delete</button>
+      </div>
     </div>
   )
 }

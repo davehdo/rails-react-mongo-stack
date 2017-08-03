@@ -5,16 +5,14 @@ feature "Authenticated user can update their profile information" do
 
     user = FactoryGirl.create(:user)
 
-    visit root_path
-
-    click_on "Sign In"
+    visit new_user_session_path
 
     fill_in "Password", with: user.password
     fill_in "Email", with: user.email
 
     click_button "Sign In"
 
-    click_on "Edit Profile"
+    visit edit_user_registration_path
 
     expect(page).to have_content "Edit"
     expect(page).to have_content "Email"

@@ -11,22 +11,12 @@ class Api::V1::TripsController < ApplicationController
 
   def show
     trip = Trip.find(params[:id])
-    nearby = '{"businesses": [{"id": "laughing-monk-cafe-boston", "country": "US", "state": "MA", "display_address": ["130 Dartmouth St", "Boston, MA 02116"]}]}'
-    # serialized = ActiveModelSerializers::SerializableResource.new(trip, adapter: :json).as_json
-    # render json: serialized.merge(JSON.parse(nearby))
-
     restaurants = trip.restaurants
+
     render json: {trip: trip, restaurants: restaurants}, adapter: :json
   end
 
   def create
-    # trip = current_user.trips.new(trip_params)
-    # if trip.save
-    #   render json: trip, adapter: :json
-    # else
-    #   render json: trip.errors, status: :unprocessable_entity
-    # end
-
     body = request.body.read
     parsed = JSON.parse(body)
     trip = Trip.new(parsed)

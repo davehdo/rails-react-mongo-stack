@@ -10,13 +10,12 @@ feature "Authenticated users can delete their account" do
 
     click_button "Sign In"
 
-    click_on "Edit Profile"
+    visit edit_user_registration_path
 
     expect(page).to have_content "Edit User"
 
     click_on "Cancel my account"
 
-    expect(page).to have_content "Your account has been successfully cancelled."
-    expect(page).to have_content "Hungry Travels"
+    expect(page).to have_content "You need to sign in or sign up before continuing."
   end
 end

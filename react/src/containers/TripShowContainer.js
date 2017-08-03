@@ -202,7 +202,7 @@ class TripShowContainer extends Component {
         {searchResults}
 
         <Link to="/">Back</Link><br/>
-        <Link onClick={this.handleTripDelete}>Delete Trip</Link>
+        <Link data-confirm="Are you sure?" onClick={this.handleTripDelete}>Delete Trip</Link>
       </div>
     )
   }

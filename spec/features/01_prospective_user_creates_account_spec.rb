@@ -11,8 +11,7 @@ require "rails_helper"
 
 feature 'New users can create an account' do
   scenario 'specifying valid and required information' do
-    visit root_path
-    click_link 'Sign Up'
+    visit new_user_registration_path
 
     fill_in 'First Name', with: 'Poro'
     fill_in 'Last Name', with: 'Fluffs'
@@ -23,12 +22,10 @@ feature 'New users can create an account' do
     click_button 'Sign Up'
 
     expect(page).to have_content("Welcome! You have signed up successfully.")
-    expect(page).to have_content("Sign Out")
   end
 
   scenario 'required information is not supplied' do
-    visit root_path
-    click_link 'Sign Up'
+    visit new_user_registration_path
     click_button 'Sign Up'
 
     expect(page).to have_content("can't be blank")
@@ -36,8 +33,7 @@ feature 'New users can create an account' do
   end
 
   scenario 'password confirmation does not match confirmation' do
-    visit root_path
-    click_link 'Sign Up'
+    visit new_user_registration_path
 
     fill_in 'Password', with: 'password'
     fill_in 'Password Confirmation', with: 'somethingElse'

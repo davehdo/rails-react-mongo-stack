@@ -9,8 +9,10 @@ class TripsIndexContainer extends Component {
       newName: '',
       newCity: '',
       newState: '',
-      newDate: ''
+      newDate: '',
+      user: ''
     }
+    this.getUser = this.getUser.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.handleClearForm = this.handleClearForm.bind(this)
     this.handleFormSubmit = this.handleFormSubmit.bind(this)
@@ -26,6 +28,19 @@ class TripsIndexContainer extends Component {
     })
     .then(body => {
       this.setState({ trips: body.trips })
+    })
+    this.getUser()
+  }
+
+  getUser() {
+    fetch('/api/v1/users', {
+      credentials: 'include' //fulfills credential requirements for user session
+    })
+    .then(response => {
+      return response.json()
+    })
+    .then(body => {
+      this.setState({ user: body.user })
     })
   }
 

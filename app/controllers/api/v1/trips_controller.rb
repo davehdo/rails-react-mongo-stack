@@ -1,6 +1,5 @@
 class Api::V1::TripsController < ApplicationController
   # before_action :authenticate_user! #, only: [:index]
-  # before_action :authorize_user
   skip_before_action :verify_authenticity_token
 
   def index

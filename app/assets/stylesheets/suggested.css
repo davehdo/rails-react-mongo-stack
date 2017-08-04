@@ -11,6 +11,7 @@
   border: 1.5px solid #EC7578;
   border-radius: 5px;
   text-align: center;
+  height: 15em;
 }
 
 #suggested-container button {

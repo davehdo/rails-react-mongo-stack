@@ -2,15 +2,25 @@
   background-color: #FFFFFF;
 }
 
-#saved-container div.row {
-  padding-top: 1em;
-}
 .saved {
-  background-color: #F3F3F3;
+  background-color: #F2F2F2;
 }
 
 .saved img {
   width: 100%;
-  height: 10em;
+  height: 12em;
   object-fit: cover;
+}
+
+#saved-container div.callout.saved {
+  padding: 0;
+  border: none;
+}
+
+#saved-container div.column.inner {
+  padding: 1em;
+}
+
+#saved-container h4 {
+  color: #E5474B;
 }

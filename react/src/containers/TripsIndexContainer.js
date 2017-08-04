@@ -1,19 +1,14 @@
 import React, { Component } from 'react';
 import TripTile from '../components/TripTile'
+import NewTripFormContainer from './NewTripFormContainer'
 
 class TripsIndexContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      trips: [],
-      newCity: '',
-      newState: '',
-      newDate: ''
+      trips: []
     }
     this.getUser = this.getUser.bind(this)
-    this.handleChange = this.handleChange.bind(this)
-    this.handleClearForm = this.handleClearForm.bind(this)
-    this.handleFormSubmit = this.handleFormSubmit.bind(this)
     this.addNewTrip = this.addNewTrip.bind(this)
   }
 
@@ -41,32 +36,6 @@ class TripsIndexContainer extends Component {
     //   this.setState({ user: body.user })
     // })
   }
-
-  handleChange(event) {
-    let value = event.target.value;
-    let name = event.target.name;
-    this.setState({ [name]: value })
-  }
-
-  handleClearForm(event) {
-    event.preventDefault();
-    this.setState({
-      newCity: '',
-      newState: '',
-      newDate: ''
-    })
-  };
-
-  handleFormSubmit(event) {
-    event.preventDefault();
-    let formPayload = {
-      city: this.state.newCity,
-      state: this.state.newState,
-      date: this.state.newDate
-    };
-    this.addNewTrip(formPayload);
-    this.handleClearForm(event);
-  };
 
   addNewTrip(formPayload) {
     fetch('/api/v1/trips', {
@@ -97,6 +66,7 @@ class TripsIndexContainer extends Component {
 
     return (
       <div>
+
         <section id="banner">
           <div className="inner">
             <header>
@@ -115,41 +85,13 @@ class TripsIndexContainer extends Component {
 
         <div className="column form-container">
           <div className="row small-12 medium-8">
-
-              <h3>Add a Trip</h3>
-              <form onSubmit={this.handleFormSubmit}>
-
-                <label onChange={this.handleChange}>City
-                  <input
-                    name='newCity'
-                    type='text'
-                    value={this.state.newCity}
-                  />
-                </label>
-
-                <label onChange={this.handleChange}>State
-                  <input
-                    name='newState'
-                    type='text'
-                    value={this.state.newState}
-                  />
-                </label>
-
-                <label onChange={this.handleChange}>Date
-                  <input
-                    name='newDate'
-                    type='text'
-                    value={this.state.newDate}
-                  />
-                </label>
-
-                <div className="button-group">
-                  <input className="button" type="submit" value="Submit" />
-                </div>
-              </form>
-
+            <h3>Add a Trip</h3>
+            <NewTripFormContainer
+              addNewTrip={this.addNewTrip}
+            />
           </div>
         </div>
+
       </div>
     )
   }

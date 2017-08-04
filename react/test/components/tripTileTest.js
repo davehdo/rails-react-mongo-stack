@@ -10,7 +10,7 @@ describe('TripTile', () => {
     wrapper = mount(
       <TripTile
         id={1}
-        name='Boston'
+        city='Boston'
         addSuggested={() => {}}
       />
     );
@@ -20,7 +20,7 @@ describe('TripTile', () => {
     expect(wrapper.find('h3')).toBePresent();
   });
 
-  it('should render a h3 tag with the name property value', () => {
+  it('should render a h3 tag with city property value', () => {
     expect(wrapper.find('h3').text()).toBe('Boston');
   });
 

@@ -19,10 +19,8 @@ RSpec.describe Api::V1::TripsController, type: :controller do
       expect(returned_json).to be_kind_of(Hash)
       expect(returned_json).to_not be_kind_of(Array)
       expect(returned_json["trips"].length).to eq 2
-      expect(returned_json["trips"][0]["name"]).to eq trip1.name
       expect(returned_json["trips"][0]["city"]).to eq trip1.city
       expect(returned_json["trips"][0]["state"]).to eq trip1.state
-      expect(returned_json["trips"][1]["name"]).to eq trip2.name
       expect(returned_json["trips"][1]["city"]).to eq trip2.city
       expect(returned_json["trips"][1]["state"]).to eq trip2.state
     end
@@ -47,7 +45,7 @@ RSpec.describe Api::V1::TripsController, type: :controller do
         expect(returned_json).to be_kind_of(Hash)
         expect(returned_json).to_not be_kind_of(Array)
         expect(returned_json["trip"]).to be_kind_of(Hash)
-        expect(returned_json["trip"]["name"]).to eq trip1.name
+        expect(returned_json["trip"]["city"]).to eq trip1.city
         expect(returned_json["restaurants"]).to be_kind_of(Array)
         expect(returned_json["restaurants"].length).to eq 2
         expect(returned_json["restaurants"][0]["name"]).to eq restaurant1.name
@@ -60,7 +58,6 @@ RSpec.describe Api::V1::TripsController, type: :controller do
         user = FactoryGirl.create(:user)
 
         post_json = {
-          name: "Boston",
           city: "Boston",
           state: "MA",
           user_id: user.id
@@ -76,7 +73,6 @@ RSpec.describe Api::V1::TripsController, type: :controller do
 
         expect(returned_json).to be_kind_of(Hash)
         expect(returned_json).to_not be_kind_of(Array)
-        expect(returned_json["trip"]["name"]).to eq "Boston"
         expect(returned_json["trip"]["city"]).to eq "Boston"
         expect(returned_json["trip"]["state"]).to eq "MA"
       end
@@ -96,7 +92,6 @@ RSpec.describe Api::V1::TripsController, type: :controller do
 
         expect(returned_json).to be_kind_of(Hash)
         expect(returned_json).to_not be_kind_of(Array)
-        expect(returned_json["trip"]["name"]).to eq trip1.name
         expect(returned_json["trip"]["city"]).to eq trip1.city
         expect(returned_json["trip"]["state"]).to eq trip1.state
       end

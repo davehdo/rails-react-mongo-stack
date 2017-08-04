@@ -37,6 +37,6 @@ class Api::V1::TripsController < ApplicationController
   private
 
   def trip_params
-    params.permit(:name, :city, :state)
+    params.permit(:city, :state, :date)
   end
 end

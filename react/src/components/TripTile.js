@@ -7,7 +7,7 @@ const TripTile = props => {
     <div className="small-12 medium-4 columns end">
       <div className="callout">
 
-        <h3>{props.name}</h3>
+        <h3>{props.city}</h3>
 
         <img src="pic03.jpg" alt=""/>
 

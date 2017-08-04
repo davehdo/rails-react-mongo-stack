@@ -6,7 +6,6 @@ class TripsIndexContainer extends Component {
     super(props);
     this.state = {
       trips: [],
-      newName: '',
       newCity: '',
       newState: '',
       newDate: ''
@@ -52,7 +51,6 @@ class TripsIndexContainer extends Component {
   handleClearForm(event) {
     event.preventDefault();
     this.setState({
-      newName: '',
       newCity: '',
       newState: '',
       newDate: ''
@@ -62,9 +60,9 @@ class TripsIndexContainer extends Component {
   handleFormSubmit(event) {
     event.preventDefault();
     let formPayload = {
-      name: this.state.newName,
       city: this.state.newCity,
-      state: this.state.newState
+      state: this.state.newState,
+      date: this.state.newDate
     };
     this.addNewTrip(formPayload);
     this.handleClearForm(event);
@@ -92,7 +90,7 @@ class TripsIndexContainer extends Component {
         <TripTile
           key={trip.id}
           id={trip.id}
-          name={trip.name}
+          city={trip.city}
         />
       )
     })
@@ -120,13 +118,6 @@ class TripsIndexContainer extends Component {
 
               <h3>Add a Trip</h3>
               <form onSubmit={this.handleFormSubmit}>
-                <label onChange={this.handleChange}>Trip Name
-                  <input
-                    name='newName'
-                    type='text'
-                    value={this.state.newName}
-                  />
-                </label>
 
                 <label onChange={this.handleChange}>City
                   <input

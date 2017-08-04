@@ -16,7 +16,7 @@ const SearchResultTile = props => {
   };
 
   return(
-    <div className="small-6 medium-4 large-2 columns end">
+    <div className="small-12 medium-6 large-4 columns end">
       <div className="callout">
 
         <div className="circle">

@@ -183,23 +183,36 @@ class TripShowContainer extends Component {
         </div>
 
         <div id="search-form" className="column">
-          <p>Search</p>
-          <form onSubmit={this.handleSearchSubmit}>
-            <label onChange={this.handleChange}>Name/Food Type
-              <input
-                name='search'
-                type='text'
-                value={this.state.search}
-              />
-            </label>
+          <div className="row">
 
-            <div className="button-group">
-              <input className="button" type="submit" value="Submit" />
+            <div className="column small-6">
+              <div className="row">
+                <form onSubmit={this.handleSearchSubmit}>
+                  <label onChange={this.handleChange}>Name/Food Type
+                    <input
+                      name='search'
+                      type='text'
+                      value={this.state.search}
+                    />
+                  </label>
+                  <div className="button-group">
+                    <input className="button" type="submit" value="Submit" />
+                  </div>
+                </form>
+              </div>
+
+              <div className="row">
+                {searchResults}
+              </div>
             </div>
-          </form>
+
+            <div>
+              <p>map</p>
+            </div>
+
+          </div>
         </div>
 
-        {searchResults}
 
         <Link to="/">Back</Link><br/>
         <Link data-confirm="Are you sure?" onClick={this.handleTripDelete}>Delete Trip</Link>

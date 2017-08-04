@@ -18,10 +18,10 @@ ActiveRecord::Schema.define(version: 20170722230727) do
   create_table "restaurants", force: :cascade do |t|
     t.bigint "trip_id"
     t.string "name", null: false
-    t.string "address", null: false
+    t.string "address"
     t.string "city", null: false
-    t.string "state", null: false
-    t.string "zip", null: false
+    t.string "state"
+    t.string "zip"
     t.string "url"
     t.string "image_url"
     t.datetime "created_at", null: false
@@ -31,9 +31,8 @@ ActiveRecord::Schema.define(version: 20170722230727) do
 
   create_table "trips", force: :cascade do |t|
     t.bigint "user_id"
-    t.string "name", null: false
     t.string "city", null: false
-    t.string "state", null: false
+    t.string "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_trips_on_user_id"

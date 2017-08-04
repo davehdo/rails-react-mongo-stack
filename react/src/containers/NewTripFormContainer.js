@@ -62,20 +62,26 @@ class NewTripFormContainer extends Component {
 
     return (
       <form onSubmit={this.handleSubmit}>
-        <label onChange={this.handleChange}>City
-          <input
-            name='newCity'
-            type='text'
-            value={this.state.newCity}
-          />
-        </label>
+        <div className="row">
+          <div className="column small-6">
+            <label onChange={this.handleChange}>City
+              <input
+                name='newCity'
+                type='text'
+                value={this.state.newCity}
+              />
+            </label>
+          </div>
 
-        <label>State
-          <select name='newState' value={this.state.newState} onChange={this.handleChange}>
-            <option value=''></option>
-            {stateElements}
-          </select>
-        </label>
+          <div className="column small-6">
+            <label>State
+              <select name='newState' value={this.state.newState} onChange={this.handleChange}>
+                <option value=''></option>
+                {stateElements}
+              </select>
+            </label>
+          </div>
+        </div>
 
         <label onChange={this.handleChange}>Date
           <input

@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20170722230727) do
     t.bigint "user_id"
     t.string "city", null: false
     t.string "state"
+    t.string "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_trips_on_user_id"

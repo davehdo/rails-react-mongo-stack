@@ -33,7 +33,7 @@ import TripTile from '../../src/components/TripTile';
     describe('TripTile fragment', () => {
 
       beforeEach(() => {
-        let trips = [{id: 1, name: "Chicago"}, {id: 2, name: "boston"}]
+        let trips = [{id: 1, city: "Chicago"}, {id: 2, city: "boston"}]
         wrapper.setState({ trips: trips })
       });
 
@@ -42,7 +42,7 @@ import TripTile from '../../src/components/TripTile';
       })
 
       it('should render a TripTile with correct props', () => {
-        expect(wrapper.find(TripTile).first().props()).toEqual({id: 1, name: "Chicago"})
+        expect(wrapper.find(TripTile).first().props()).toEqual({id: 1, city: "Chicago"})
       })
     });
 
@@ -52,10 +52,10 @@ import TripTile from '../../src/components/TripTile';
     });
 
     it('should set the state to ""', () => {
-      let state = {newName: "Chicago", newCity: "Chicago", newState: "IL", newDate: "10/20/18"}
+      let state = {newCity: "Chicago", newState: "IL", newDate: "10/20/18"}
       wrapper.setState( state )
       let event = jasmine.createSpyObj('event', ['preventDefault'])
       wrapper.instance().handleClearForm(event)
-      expect(wrapper.state()).toEqual({trips: [], newName: "", newCity: "", newState: "", newDate: ""})
+      expect(wrapper.state()).toEqual({trips: [], newCity: "", newState: "", newDate: ""})
     });
   });

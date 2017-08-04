@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import DatePicker from 'react-datepicker';
 
 class NewTripFormContainer extends Component {
   constructor(props) {
@@ -70,8 +71,8 @@ class NewTripFormContainer extends Component {
         </label>
 
         <label>State
-          <select name='newState' onChange={this.handleChange}>
-            <option value={this.state.newState}></option>
+          <select name='newState' value={this.state.newState} onChange={this.handleChange}>
+            <option value=''></option>
             {stateElements}
           </select>
         </label>

@@ -15,18 +15,14 @@
   color: rgba(255, 255, 255, 0.75);
 }
 
+.top-bar i:hover {
+  color: #FFFFFF;
+}
+
 ul.menu {
   /*background-color: #36454f;*/
     background-color: #42424f;
 }
-
-.top-bar a {
-  color: rgba(255, 255, 255, 0.75);
-}
-
-  .top-bar a:hover {
-    color: #FFFFFF;
-  }
 
 .dropdown {
     position: relative;

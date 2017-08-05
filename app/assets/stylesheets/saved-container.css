@@ -1,3 +1,19 @@
+.trip-title {
+  padding-top: 3.5em;
+}
+
+.trip-title h2 {
+  font-family: 'Passion One';
+  color: #E5474B;
+  display: inline-block;
+  margin: 0 .5em;
+}
+
+.trip-title p {
+  color: #E5474B;
+  display: inline-block;
+}
+
 #saved-container {
   background-color: #FFFFFF;
 }

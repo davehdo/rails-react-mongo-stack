@@ -166,8 +166,10 @@ class TripShowContainer extends Component {
 
     return (
       <div>
-        <p>{this.state.trip.city}, {this.state.trip.state}</p>
-        <p>{this.state.trip.date}</p>
+        <div className="trip-title">
+          <h2>{this.state.trip.city}, {this.state.trip.state}</h2>
+          <p>{this.state.trip.date}</p>
+        </div>
 
         <div id="saved-container">
           <div className="row">

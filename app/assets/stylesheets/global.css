@@ -14,7 +14,13 @@ div#main.column {
   background-color: #E6E6E6;
 }
 
+p.notice {
+  margin: 0;
+}
 
+p.alert {
+  margin: 0;
+}
 
 /* Main */
 

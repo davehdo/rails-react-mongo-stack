@@ -13,19 +13,23 @@ class Topbar extends Component {
     return (
       <div>
         <div className="top-bar">
-          <i className="fa fa-home" aria-hidden="true"></i>
           <div className="top-bar-left">
+            <Link to="/"><i className="fa fa-home" aria-hidden="true"></i></Link>
             <ul className="menu">
-              <li><Link to="/">Hungry Travels</Link></li>
             </ul>
           </div>
 
-          <i className="fa fa-bars" aria-hidden="true"></i>
+
+
           <div className="top-bar-right">
-            <ul className="menu">
-              <li><a data-method="delete" href="/users/sign_out">Sign Out</a></li>
-              <li><a href="/users/edit">Edit Profile</a></li>
-            </ul>
+            <div className="dropdown">
+              <i className="fa fa-bars" aria-hidden="true"></i>
+              <div className="dropdown-content">
+                <a data-method="delete" href="/users/sign_out">Sign Out</a>
+                <a href="/users/edit">Edit Profile</a>
+              </div>
+            </div>
+
           </div>
         </div>
         {this.props.children}

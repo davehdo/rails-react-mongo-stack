@@ -177,30 +177,33 @@ class TripShowContainer extends Component {
           </div>
         </div>
 
-        <div id="suggested-container">
-          <div className="row">
-            <h4>Suggestions</h4>
-            {suggested}
-          </div>
-        </div>
+
 
         <div id="search-form" className="column">
           <div className="row">
 
             <div className="column small-6">
               <div className="row">
+
                 <form onSubmit={this.handleSearchSubmit}>
-                  <label onChange={this.handleChange}>Name/Food Type
-                    <input
-                      name='search'
-                      type='text'
-                      value={this.state.search}
-                    />
-                  </label>
-                  <div className="button-group">
-                    <input className="button" type="submit" value="Submit" />
+                  <div className="column small-10">
+                    <label onChange={this.handleChange}>
+                      <input
+                        placeholder="Search"
+                        name='search'
+                        type='text'
+                        value={this.state.search}
+                      />
+                    </label>
+                  </div>
+                  <div className="column small-2">
+                    <div className="button-group">
+                      <input type="submit" className="fa fa-search" value="&#xf002;" />
+                      {/* <input className="button" type="submit" value="Submit" /> */}
+                    </div>
                   </div>
                 </form>
+
               </div>
 
               <div className="row">
@@ -215,8 +218,14 @@ class TripShowContainer extends Component {
           </div>
         </div>
 
+        <div id="suggested-container">
+          <div className="row">
+            <h4>Suggestions</h4>
+            {suggested}
+          </div>
+        </div>
 
-        <Link to="/">Back</Link><br/>
+
         <Link data-confirm="Are you sure?" onClick={this.handleTripDelete}>Delete Trip</Link>
       </div>
     )

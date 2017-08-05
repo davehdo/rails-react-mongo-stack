@@ -1,0 +1,26 @@
+.top-bar {
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  width: 100%;
+  opacity: 0.8;
+  /*background-color: #36454f;*/
+    background-color: #42424f;
+}
+
+.top-bar i {
+  font-size: 1.75em;
+}
+
+ul.menu {
+  /*background-color: #36454f;*/
+    background-color: #42424f;
+}
+
+.top-bar a {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+  .top-bar a:hover {
+    color: #FFFFFF;
+  }

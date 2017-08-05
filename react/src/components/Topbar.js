@@ -13,12 +13,14 @@ class Topbar extends Component {
     return (
       <div>
         <div className="top-bar">
+          <i className="fa fa-home" aria-hidden="true"></i>
           <div className="top-bar-left">
             <ul className="menu">
               <li><Link to="/">Hungry Travels</Link></li>
             </ul>
           </div>
 
+          <i className="fa fa-bars" aria-hidden="true"></i>
           <div className="top-bar-right">
             <ul className="menu">
               <li><a data-method="delete" href="/users/sign_out">Sign Out</a></li>

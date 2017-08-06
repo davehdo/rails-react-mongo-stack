@@ -17,6 +17,7 @@ class TripShowContainer extends Component {
     this.loadMap = this.loadMap.bind(this);
     this.loadMarkers = this.loadMarkers.bind(this);
     this.addMarker = this.addMarker.bind(this);
+    this.removeMarker = this.removeMarker.bind(this);
     this.getRestaurants = this.getRestaurants.bind(this);
     this.getSuggested = this.getSuggested.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
@@ -42,21 +43,33 @@ class TripShowContainer extends Component {
   }
 
   loadMarkers() {
+    this.markers = []
     this.state.restaurants.map((restaurant) => {
-      new google.maps.Marker({
+      let marker = new google.maps.Marker({
         position: {lat: restaurant.lat, lng: restaurant.lon},
         map: this.map,
-        title: restaurant.name
+        title: restaurant.name,
+        id: restaurant.id
       });
+      this.markers.push(marker)
     })
   }
 
   addMarker(newRestaurant) {
-    var marker = new google.maps.Marker({
+    let marker = new google.maps.Marker({
       position: {lat: newRestaurant.lat, lng: newRestaurant.lon},
       map: this.map,
-      title: newRestaurant.name
+      title: newRestaurant.name,
+      id: newRestaurant.id
     });
+    this.markers.push(marker)
+  }
+
+  removeMarker(removedRestaurant) {
+    let removedMarker = this.markers.find(marker => {
+      return marker.id === removedRestaurant.id
+    })
+    removedMarker.setMap(null);
   }
 
   getRestaurants() {
@@ -126,6 +139,7 @@ class TripShowContainer extends Component {
       let newRestaurants = this.state.restaurants.filter(restaurant => {
         return restaurant.id !== body.id
       })
+      this.removeMarker(body)
       this.setState({ restaurants: newRestaurants })
     })
   }

@@ -3,6 +3,7 @@ ruby '2.3.3'
 
 gem 'active_model_serializers'
 gem 'devise'
+gem 'geocoder'
 gem 'rails', '~> 5.1.2'
 gem 'pg', '~> 0.15'
 gem 'sass-rails', '~> 5.0'

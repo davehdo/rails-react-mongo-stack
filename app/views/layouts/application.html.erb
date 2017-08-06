@@ -12,12 +12,6 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
 
-    <style>
-      #map {
-        height: 400px;
-        width: 400px;
-      }
-    </style>
   </head>
 
   <body>
@@ -28,8 +22,8 @@
     <%= yield %>
 
     <script>
+      // this is a dummy function that google maps looks for in order to initialize the map, however, I prefer to initialize in react
       function initMap() {}
-      // this is a dummy function that google maps looks for in order to initialize the map, however, we prefer to initialize in react
     </script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA42lCf6ZJBzOF2HGN2Oh-eonCGNxueHAY&callback=initMap"

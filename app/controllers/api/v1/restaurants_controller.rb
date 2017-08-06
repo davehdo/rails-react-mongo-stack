@@ -20,6 +20,17 @@ class Api::V1::RestaurantsController < ApplicationController
   private
 
   def restaurant_params
-    params.permit(:name, :address, :city, :state, :zip, :url, :image_url, :trip_id)
+    params.permit(
+      :name,
+      :address,
+      :city,
+      :state,
+      :zip,
+      :url, 
+      :image_url,
+      :trip_id,
+      :lat,
+      :lon
+    )
   end
 end

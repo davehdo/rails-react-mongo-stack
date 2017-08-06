@@ -14,6 +14,8 @@ class TripShowContainer extends Component {
       search: '',
       searchResults: []
     }
+    this.loadMap = this.loadMap.bind(this);
+    this.addMarker = this.addMarker.bind(this);
     this.getRestaurants = this.getRestaurants.bind(this);
     this.getSuggested = this.getSuggested.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
@@ -28,12 +30,21 @@ class TripShowContainer extends Component {
   componentDidMount() {
     this.getRestaurants()
     this.getSuggested()
+  }
 
+  loadMap() {
     this.map = new google.maps.Map(this.refs.mapContainer, {
-      center: {lat: -34.397, lng: 150.644},
+      center: {lat: this.state.trip.lat, lng: this.state.trip.lon},
       zoom: 8
     });
+    this.addMarker()
+  }
 
+  addMarker() {
+    let marker = new google.maps.Marker({
+      position: {lat: 41.8784, lng: -87.6296},
+      map: this.map
+    });
   }
 
   getRestaurants() {
@@ -44,7 +55,7 @@ class TripShowContainer extends Component {
       this.setState({
         trip: body.trip,
         restaurants: body.restaurants
-      })
+      }, this.loadMap)
     })
   }
 

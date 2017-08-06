@@ -15,6 +15,7 @@ class TripShowContainer extends Component {
       searchResults: []
     }
     this.loadMap = this.loadMap.bind(this);
+    this.loadMarkers = this.loadMarkers.bind(this);
     this.addMarker = this.addMarker.bind(this);
     this.getRestaurants = this.getRestaurants.bind(this);
     this.getSuggested = this.getSuggested.bind(this);
@@ -35,15 +36,26 @@ class TripShowContainer extends Component {
   loadMap() {
     this.map = new google.maps.Map(this.refs.mapContainer, {
       center: {lat: this.state.trip.lat, lng: this.state.trip.lon},
-      zoom: 8
+      zoom: 10
     });
-    this.addMarker()
+    this.loadMarkers()
   }
 
-  addMarker() {
-    let marker = new google.maps.Marker({
-      position: {lat: 41.8784, lng: -87.6296},
-      map: this.map
+  loadMarkers() {
+    this.state.restaurants.map((restaurant) => {
+      new google.maps.Marker({
+        position: {lat: restaurant.lat, lng: restaurant.lon},
+        map: this.map,
+        title: restaurant.name
+      });
+    })
+  }
+
+  addMarker(newRestaurant) {
+    var marker = new google.maps.Marker({
+      position: {lat: newRestaurant.lat, lng: newRestaurant.lon},
+      map: this.map,
+      title: newRestaurant.name
     });
   }
 
@@ -98,6 +110,7 @@ class TripShowContainer extends Component {
     )
     .then(response => response.json())
     .then(responseData => {
+      this.addMarker(responseData)
       this.setState({ restaurants: [...this.state.restaurants, responseData] })
     })
   }

@@ -14,6 +14,10 @@ class TripShowContainer extends Component {
       search: '',
       searchResults: []
     }
+    this.loadMap = this.loadMap.bind(this);
+    this.loadMarkers = this.loadMarkers.bind(this);
+    this.addMarker = this.addMarker.bind(this);
+    this.removeMarker = this.removeMarker.bind(this);
     this.getRestaurants = this.getRestaurants.bind(this);
     this.getSuggested = this.getSuggested.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
@@ -30,6 +34,45 @@ class TripShowContainer extends Component {
     this.getSuggested()
   }
 
+  loadMap() {
+    this.map = new google.maps.Map(this.refs.mapContainer, {
+      center: {lat: this.state.trip.lat, lng: this.state.trip.lon},
+      zoom: 10
+    });
+    this.loadMarkers()
+  }
+
+  loadMarkers() {
+    this.markers = []
+    this.state.restaurants.map((restaurant) => {
+      let marker = new google.maps.Marker({
+        position: {lat: restaurant.lat, lng: restaurant.lon},
+        map: this.map,
+        title: restaurant.name,
+        id: restaurant.id
+      });
+      this.markers.push(marker)
+    })
+  }
+
+  addMarker(newRestaurant) {
+    let marker = new google.maps.Marker({
+      position: {lat: newRestaurant.lat, lng: newRestaurant.lon},
+      map: this.map,
+      title: newRestaurant.name,
+      id: newRestaurant.id
+    });
+    this.markers.push(marker)
+  }
+
+  removeMarker(removedRestaurant) {
+    let removedMarker = this.markers.find(marker => {
+      return marker.id === removedRestaurant.id
+    })
+    removedMarker.setMap(null);
+    removedMarker = null;
+  }
+
   getRestaurants() {
     let tripId = this.props.params.id
     fetch(`/api/v1/trips/${tripId}`)
@@ -38,7 +81,7 @@ class TripShowContainer extends Component {
       this.setState({
         trip: body.trip,
         restaurants: body.restaurants
-      })
+      }, this.loadMap)
     })
   }
 
@@ -81,6 +124,7 @@ class TripShowContainer extends Component {
     )
     .then(response => response.json())
     .then(responseData => {
+      this.addMarker(responseData)
       this.setState({ restaurants: [...this.state.restaurants, responseData] })
     })
   }
@@ -96,6 +140,7 @@ class TripShowContainer extends Component {
       let newRestaurants = this.state.restaurants.filter(restaurant => {
         return restaurant.id !== body.id
       })
+      this.removeMarker(body)
       this.setState({ restaurants: newRestaurants })
     })
   }
@@ -212,6 +257,9 @@ class TripShowContainer extends Component {
 
             <div>
               <p>map</p>
+              <div id="map" ref="mapContainer"></div>
+
+
             </div>
 
           </div>

@@ -10,7 +10,9 @@ const SearchResultTile = props => {
       state: props.restaurant.location.state,
       zip: props.restaurant.location.zip_code,
       url: props.restaurant.url,
-      image_url: props.restaurant.image_url
+      image_url: props.restaurant.image_url,
+      lat: props.restaurant.coordinates.latitude,
+      lon: props.restaurant.coordinates.longitude
     };
     props.addRestaurant(payload)
   };

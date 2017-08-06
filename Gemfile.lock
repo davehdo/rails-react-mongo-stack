@@ -88,6 +88,7 @@ GEM
       factory_girl (~> 4.8.0)
       railties (>= 3.0.0)
     ffi (1.9.18)
+    geocoder (1.4.4)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     http (2.2.2)
@@ -265,6 +266,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   factory_girl_rails
+  geocoder
   http
   jquery-rails
   launchy

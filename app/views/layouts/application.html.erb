@@ -3,12 +3,21 @@
   <head>
     <title>Hungry Travels</title>
     <%= csrf_meta_tags %>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
 
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/css/foundation.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+
+    <style>
+      #map {
+        height: 400px;
+        width: 400px;
+      }
+    </style>
   </head>
 
   <body>
@@ -18,5 +27,12 @@
 
     <%= yield %>
 
+    <script>
+      function initMap() {}
+      // this is a dummy function that google maps looks for in order to initialize the map, however, we prefer to initialize in react
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA42lCf6ZJBzOF2HGN2Oh-eonCGNxueHAY&callback=initMap"
+    async defer></script>
   </body>
 </html>

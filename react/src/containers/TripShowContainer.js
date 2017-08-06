@@ -28,6 +28,12 @@ class TripShowContainer extends Component {
   componentDidMount() {
     this.getRestaurants()
     this.getSuggested()
+
+    this.map = new google.maps.Map(this.refs.mapContainer, {
+      center: {lat: -34.397, lng: 150.644},
+      zoom: 8
+    });
+
   }
 
   getRestaurants() {
@@ -212,6 +218,9 @@ class TripShowContainer extends Component {
 
             <div>
               <p>map</p>
+              <div id="map" ref="mapContainer"></div>
+
+
             </div>
 
           </div>

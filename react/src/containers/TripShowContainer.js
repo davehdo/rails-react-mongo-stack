@@ -70,6 +70,7 @@ class TripShowContainer extends Component {
       return marker.id === removedRestaurant.id
     })
     removedMarker.setMap(null);
+    removedMarker = null;
   }
 
   getRestaurants() {

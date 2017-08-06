@@ -199,7 +199,6 @@ class TripShowContainer extends Component {
                   <div className="column small-2">
                     <div className="button-group">
                       <input type="submit" className="fa fa-search" value="&#xf002;" />
-                      {/* <input className="button" type="submit" value="Submit" /> */}
                     </div>
                   </div>
                 </form>

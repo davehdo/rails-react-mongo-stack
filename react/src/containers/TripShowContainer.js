@@ -258,8 +258,6 @@ class TripShowContainer extends Component {
             <div>
               <p>map</p>
               <div id="map" ref="mapContainer"></div>
-
-
             </div>
 
           </div>

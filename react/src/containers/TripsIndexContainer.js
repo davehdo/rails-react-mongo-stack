@@ -38,6 +38,7 @@ class TripsIndexContainer extends Component {
   }
 
   addNewTrip(formPayload) {
+    console.log(formPayload)
     fetch('/api/v1/trips', {
       headers: {
         "content-type": "application/json",
@@ -49,11 +50,13 @@ class TripsIndexContainer extends Component {
     })
     .then(response => response.json())
     .then(responseData => {
+      console.log(responseData.trip)
       this.setState({ trips: [...this.state.trips, responseData.trip] })
     })
   }
 
   render() {
+
     let trips = this.state.trips.map(trip => {
       return (
         <TripTile

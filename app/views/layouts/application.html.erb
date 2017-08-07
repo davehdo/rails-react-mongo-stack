@@ -6,16 +6,14 @@
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
 
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/css/foundation.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/css/foundation.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://chrisdavies.github.io/tiny-date-picker/tiny-date-picker.css">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-
   </head>
 
   <body>
-
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
@@ -25,8 +23,7 @@
       // this is a dummy function that google maps looks for in order to initialize the map, however, I prefer to initialize in react
       function initMap() {}
     </script>
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA42lCf6ZJBzOF2HGN2Oh-eonCGNxueHAY&callback=initMap"
-    async defer></script>
+    <script src="http://chrisdavies.github.io/tiny-date-picker/tiny-date-picker.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA42lCf6ZJBzOF2HGN2Oh-eonCGNxueHAY&callback=initMap" async defer></script>
   </body>
 </html>

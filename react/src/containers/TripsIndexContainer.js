@@ -20,7 +20,6 @@ class TripsIndexContainer extends Component {
       return response.json()
     })
     .then(body => {
-      console.log(body.trips)
       this.setState({ trips: body.trips })
     })
     this.getUser()

@@ -22,9 +22,9 @@ class NewTripFormContainer extends Component {
 
   componentDidMount() {
     TinyDatePicker(document.querySelector('.startDate'), {
-      onChangeDate: function (context) {
-        // console.log(document.getElementById('startDate').value)
-      },
+      // onChangeDate: function (context) {
+      //   // console.log(document.getElementById('startDate').value)
+      // },
     });
   }
 

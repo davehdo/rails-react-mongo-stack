@@ -5,7 +5,6 @@ class Api::V1::TripsController < ApplicationController
   def index
     user = current_user
     trips = user.trips
-
     render json: trips, adapter: :json
   end
 
@@ -37,6 +36,6 @@ class Api::V1::TripsController < ApplicationController
   private
 
   def trip_params
-    params.permit(:city, :state, :date)
+    params.permit(:city, :state, :date, :start_date)
   end
 end

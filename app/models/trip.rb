@@ -1,4 +1,5 @@
 class Trip < ApplicationRecord
+
   belongs_to :user
   has_many :restaurants
 
@@ -11,4 +12,6 @@ class Trip < ApplicationRecord
   def address
     "#{self.city}, #{self.state}"
   end
+
+  # raise self.start_date.inspect
 end

@@ -54,6 +54,7 @@ class TripsIndexContainer extends Component {
   }
 
   render() {
+
     let trips = this.state.trips.map(trip => {
       return (
         <TripTile

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import DatePicker from 'react-datepicker';
+import TinyDatePicker from 'tiny-date-picker'
 
 class NewTripFormContainer extends Component {
   constructor(props) {
@@ -8,6 +8,7 @@ class NewTripFormContainer extends Component {
       newCity: '',
       newState: '',
       newDate: '',
+      startDate: '',
       stateOptions: ['AK','AL','AR','AZ','CA','CO','CT','DE','FL','GA','HI','IA','ID','IL',
         'IN','KS','KY','LA','MA','MD','ME','MI','MN','MO','MS','MT','NC','ND','NE','NH',
         'NJ','NM','NV','NY','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VA','VT',
@@ -17,6 +18,14 @@ class NewTripFormContainer extends Component {
     // this.validate = this.validate.bind(this);
     this.handleClearForm = this.handleClearForm.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    TinyDatePicker(document.querySelector('.startDate'), {
+      // onChangeDate: function (context) {
+      //   // console.log(document.getElementById('startDate').value)
+      // },
+    });
   }
 
   handleChange(event) {
@@ -38,16 +47,19 @@ class NewTripFormContainer extends Component {
     this.setState({
       newCity: '',
       newState: '',
-      newDate: ''
+      newDate: '',
+      startDate: ''
     })
   };
 
   handleSubmit(event) {
     event.preventDefault();
+    let selectedDate = document.getElementById('startDate').value
     let formPayload = {
       city: this.state.newCity,
       state: this.state.newState,
-      date: this.state.newDate
+      date: this.state.newDate,
+      start_date: selectedDate
     };
     this.props.addNewTrip(formPayload);
     this.handleClearForm(event);
@@ -83,11 +95,13 @@ class NewTripFormContainer extends Component {
           </div>
         </div>
 
-        <label onChange={this.handleChange}>Date
+        <label onChange={this.handleChange}>Start Date
           <input
-            name='newDate'
             type='text'
-            value={this.state.newDate}
+            className='startDate'
+            id='startDate'
+            name='startDate'
+            value={this.state.startDate}
           />
         </label>
 
@@ -100,3 +114,11 @@ class NewTripFormContainer extends Component {
 }
 
 export default NewTripFormContainer
+
+{/* <label onChange={this.handleChange}>Date
+  <input
+    name='newDate'
+    type='text'
+    value={this.state.newDate}
+  />
+</label> */}

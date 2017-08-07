@@ -20,6 +20,7 @@ class TripsIndexContainer extends Component {
       return response.json()
     })
     .then(body => {
+      console.log(body.trips)
       this.setState({ trips: body.trips })
     })
     this.getUser()
@@ -38,7 +39,6 @@ class TripsIndexContainer extends Component {
   }
 
   addNewTrip(formPayload) {
-    console.log(formPayload)
     fetch('/api/v1/trips', {
       headers: {
         "content-type": "application/json",
@@ -50,7 +50,6 @@ class TripsIndexContainer extends Component {
     })
     .then(response => response.json())
     .then(responseData => {
-      console.log(responseData.trip)
       this.setState({ trips: [...this.state.trips, responseData.trip] })
     })
   }

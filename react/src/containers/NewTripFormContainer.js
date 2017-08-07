@@ -24,7 +24,6 @@ class NewTripFormContainer extends Component {
     TinyDatePicker(document.querySelector('.startDate'), {
       onChangeDate: function (context) {
         // console.log(document.getElementById('startDate').value)
-        // this.setState({ startDate: document.getElementById('startDate').value})
       },
     });
   }
@@ -55,7 +54,6 @@ class NewTripFormContainer extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    // this.setState({ startDate: document.getElementById('startDate').value})
     let selectedDate = document.getElementById('startDate').value
     let formPayload = {
       city: this.state.newCity,
@@ -63,7 +61,6 @@ class NewTripFormContainer extends Component {
       date: this.state.newDate,
       start_date: selectedDate
     };
-    debugger
     this.props.addNewTrip(formPayload);
     this.handleClearForm(event);
   };
@@ -98,15 +95,7 @@ class NewTripFormContainer extends Component {
           </div>
         </div>
 
-        <label onChange={this.handleChange}>Date
-          <input
-            name='newDate'
-            type='text'
-            value={this.state.newDate}
-          />
-        </label>
-
-        <label onChange={this.handleChange}>Date Picker
+        <label onChange={this.handleChange}>Start Date
           <input
             type='text'
             className='startDate'
@@ -125,3 +114,11 @@ class NewTripFormContainer extends Component {
 }
 
 export default NewTripFormContainer
+
+{/* <label onChange={this.handleChange}>Date
+  <input
+    name='newDate'
+    type='text'
+    value={this.state.newDate}
+  />
+</label> */}

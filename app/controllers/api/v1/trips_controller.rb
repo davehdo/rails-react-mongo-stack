@@ -5,7 +5,6 @@ class Api::V1::TripsController < ApplicationController
   def index
     user = current_user
     trips = user.trips
-
     render json: trips, adapter: :json
   end
 

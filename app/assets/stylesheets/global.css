@@ -1,9 +1,10 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400|Passion+One:400");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400|Passion+One:400|Roboto:300,400|Open+Sans:300,400,600");
 
 
 body {
   background-color: #FFFFFF;
+  /*background-color: #E5474B;*/
 }
 
 div#main.column {
@@ -21,6 +22,11 @@ p.notice {
 
 p.alert {
   margin: 0;
+}
+
+.row {
+  margin: 0 auto;
+  max-width: 80rem;
 }
 
 /* Main */

@@ -2,17 +2,49 @@
   padding-top: 3.5em;
 }
 
-.trip-title h2 {
-  font-family: 'Passion One';
+.trip-title h1 {
+  font-family: 'Open Sans';
+  font-weight: 600;
   color: #E5474B;
   display: inline-block;
-  margin: 0 .5em;
+  margin: 0 0 .5em .5em;
 }
 
 .trip-title p {
   color: #E5474B;
   display: inline-block;
+  font-family: 'Roboto';
 }
+
+.saved a {
+  color: #EC7578;
+  border-bottom: 1px dotted;
+}
+
+.saved a:hover {
+  font-weight: 500;
+  text-decoration: none;
+  color: #E5474B;
+}
+
+.delete {
+  display: inline-block;
+  float: right;
+  font-size: .9em;
+  padding-right: 1em;
+}
+
+.delete a {
+  border-bottom: none;
+}
+
+a.delete {
+  color: #EC7578;
+}
+
+  a.delete:hover {
+    color: #E5474B;
+  }
 
 #saved-container {
   background-color: #FFFFFF;
@@ -39,4 +71,6 @@
 
 #saved-container h4 {
   color: #E5474B;
+  font-family: 'Open Sans';
+  font-weight: 600;
 }

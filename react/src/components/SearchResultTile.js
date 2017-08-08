@@ -19,17 +19,21 @@ const SearchResultTile = props => {
 
   return(
     <div className="small-12 medium-6 large-4 columns end">
-      <div className="callout">
+      <div className="callout search-result-tile">
 
-        <div className="circle">
+        <div className="search-img">
           <img src={props.restaurant.image_url} alt={props.restaurant.name} />
         </div>
 
-        <h6>{props.restaurant.name}</h6>
-        <h6>Rating: {props.restaurant.rating}</h6>
-        <a href={props.restaurant.url}>Learn More</a><br/>
+        <div className="search-inner">
+          <h6>{props.restaurant.name}</h6>
+          <p>Rating: {props.restaurant.rating}</p>
 
-        <button type="button" onClick={handleAddClick}>Add</button>
+          <div className="add-container">
+            <a href={props.restaurant.url}>Learn More</a><br/>
+            <button type="button" onClick={handleAddClick}>Add</button>
+          </div>
+        </div>
 
       </div>
     </div>

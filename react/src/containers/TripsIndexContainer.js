@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import TripTile from '../components/TripTile'
-import NewTripFormContainer from './NewTripFormContainer'
+import TripTile from '../components/TripTile';
+import NewTripFormContainer from './NewTripFormContainer';
+import Footer from '../components/Footer';
+
 
 class TripsIndexContainer extends Component {
   constructor(props) {
@@ -74,7 +76,7 @@ class TripsIndexContainer extends Component {
               <h1>Hungry Travels</h1>
               <p>An app for traveling food lovers</p>
             </header>
-            <a href="#main" className="more scrolly">Learn More</a>
+            <a href="#main" className="more scrolly">Get Started</a>
           </div>
         </section>
 
@@ -86,12 +88,18 @@ class TripsIndexContainer extends Component {
 
         <div className="column form-container">
           <div className="row small-12 medium-8">
-            <h3>Add a Trip</h3>
+            <h3>Where are you traveling?</h3>
             <NewTripFormContainer
               addNewTrip={this.addNewTrip}
             />
           </div>
         </div>
+
+
+        <div className="column footer">
+          <Footer />
+        </div>
+
 
       </div>
     )

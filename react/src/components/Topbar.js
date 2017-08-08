@@ -27,6 +27,7 @@ class Topbar extends Component {
               <div className="dropdown-content">
                 <a data-method="delete" href="/users/sign_out">Sign Out</a>
                 <a href="/users/edit">Edit Profile</a>
+
               </div>
             </div>
 

@@ -1,12 +1,16 @@
 .form-container {
   background-color: #E5474B;
+  padding: 2em;
 }
 
 .form-container label {
   color: #FFFFFF;
+  font-family: 'Roboto';
 }
 
 .form-container input.button {
+  font-family: 'Roboto';
+  font-size: 1em;
   background-color: #E5474B;
   border-width: 1px;
   border-radius: 5px;
@@ -23,4 +27,6 @@
 
 .form-container h3 {
   color: #FFFFFF;
+  font-family: 'Open Sans';
+  padding-bottom: 1em;
 }

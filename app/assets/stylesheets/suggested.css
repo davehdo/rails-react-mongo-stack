@@ -69,7 +69,10 @@
 }
 
 .add-container {
-  /*position: absolute;
-  bottom: 3px;
-  margin: auto;*/
+  position: absolute;
+  bottom: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
 }

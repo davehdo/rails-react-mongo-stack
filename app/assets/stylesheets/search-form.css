@@ -1,5 +1,6 @@
 #search-form {
   background-color: #F7F7F7;
+  /*background-color: #FFFFFF;*/
   min-height: 28em;
 }
 
@@ -34,10 +35,13 @@
   padding: 0;
   border: none;
   height: 20em;
+  /*background-color: #F7F7F7;*/
+  background-color: #FFFFFF;
 }
 
 .search-result-tile h6 {
   font-family: 'Open Sans';
+  font-weight: 600;
   color: #E5474B;
 }
 
@@ -50,10 +54,26 @@
   padding: .4em 2em .4em 2em;
   font-family: 'Roboto';
   font-size: 1em;
-  background-color: #EC7578;
+  background-color: #E5474B;
   border-width: 1px;
   border-radius: 5px;
   border-color: #FFFFFF;
   color: #FFFFFF;
   transition: background-color 1s;
 }
+
+.search-result-tile button:hover {
+  background-color: #EC7578;
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+  transition: background-color 1s;
+}
+
+.search-result-tile a {
+  color: #EC7578;
+}
+
+  .search-result-tile a:hover {
+    color: #E5474B;
+    font-weight: 500;
+  }

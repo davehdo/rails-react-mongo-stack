@@ -93,6 +93,18 @@ class TripsIndexContainer extends Component {
           </div>
         </div>
 
+
+        <div className="column footer">
+          <hr/>
+          <div className="github">
+            <i className="fa fa-github" aria-hidden="true"></i>
+            <p>github.com/laurado</p><br/>
+            <i className="fa fa-linkedin-square" aria-hidden="true"></i>
+            <p>linkedin.com/in/laura-do</p><br/>
+          </div>
+        </div>
+
+
       </div>
     )
   }

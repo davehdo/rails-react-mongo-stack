@@ -256,7 +256,6 @@ class TripShowContainer extends Component {
             </div>
 
             <div>
-              <p>map</p>
               <div id="map" ref="mapContainer"></div>
             </div>
 
@@ -265,7 +264,7 @@ class TripShowContainer extends Component {
 
         <div id="suggested-container">
           <div className="row">
-            <h4>Suggestions</h4>
+            <h4>Popular suggestions in {this.state.trip.city}</h4>
             {suggested}
           </div>
         </div>

@@ -34,6 +34,8 @@
 
 #suggested-container h4 {
   color: #FFFFFF;
+  padding-left: 1em;
+  font-family: 'Open Sans';
 }
 
 #suggested-container p {

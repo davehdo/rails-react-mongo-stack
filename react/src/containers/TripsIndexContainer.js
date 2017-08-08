@@ -74,7 +74,7 @@ class TripsIndexContainer extends Component {
               <h1>Hungry Travels</h1>
               <p>An app for traveling food lovers</p>
             </header>
-            <a href="#main" className="more scrolly">Learn More</a>
+            <a href="#main" className="more scrolly">Get Started</a>
           </div>
         </section>
 
@@ -86,7 +86,7 @@ class TripsIndexContainer extends Component {
 
         <div className="column form-container">
           <div className="row small-12 medium-8">
-            <h3>Where are you going?</h3>
+            <h3>Where are you traveling?</h3>
             <NewTripFormContainer
               addNewTrip={this.addNewTrip}
             />

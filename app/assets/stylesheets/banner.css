@@ -4,8 +4,11 @@
 }
 
 #banner {
+  display: flex;
+  justify-content: center;
   padding: 8em 4em 6em 4em;
-  min-height: 70vh;
+  height: 70vh;
+  max-height: 40em;
   background-image: url("IMG_0914.jpg");
   /*background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('IMG_0914.jpg');*/
   background-position: center;
@@ -26,7 +29,7 @@
     color: #fff;
     font-size: 5em;
     font-weight: 400;
-    font-family: 'Passion One', cursive;
+    font-family: 'Passion One', sans-serif;
     margin: 0;
   }
 

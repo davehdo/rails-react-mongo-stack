@@ -19,9 +19,9 @@ const SearchResultTile = props => {
 
   return(
     <div className="small-12 medium-6 large-4 columns end">
-      <div className="callout">
+      <div className="callout search-result-tile">
 
-        <div className="circle">
+        <div className="search-img">
           <img src={props.restaurant.image_url} alt={props.restaurant.name} />
         </div>
 

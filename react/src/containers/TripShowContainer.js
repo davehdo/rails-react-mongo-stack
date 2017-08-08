@@ -211,9 +211,11 @@ class TripShowContainer extends Component {
 
     return (
       <div>
+
         <div className="trip-title">
-          <h2>{this.state.trip.city}, {this.state.trip.state}</h2>
+          <h1>{this.state.trip.city}, {this.state.trip.state}</h1>
           <p>{this.state.trip.date}</p>
+          <Link className="delete" data-confirm="Are you sure?" onClick={this.handleTripDelete}>Delete Trip</Link>
         </div>
 
         <div id="saved-container">
@@ -222,16 +224,13 @@ class TripShowContainer extends Component {
           </div>
         </div>
 
-
-
-        <div id="search-form" className="column">
+        <div id="search-form">
           <div className="row">
 
-            <div className="column small-6">
+            <div className="column small-12 medium-6">
               <div className="row">
-
                 <form onSubmit={this.handleSearchSubmit}>
-                  <div className="column small-10">
+                  <div className="column small-10 search-field">
                     <label onChange={this.handleChange}>
                       <input
                         placeholder="Search"
@@ -247,7 +246,6 @@ class TripShowContainer extends Component {
                     </div>
                   </div>
                 </form>
-
               </div>
 
               <div className="row">
@@ -255,7 +253,7 @@ class TripShowContainer extends Component {
               </div>
             </div>
 
-            <div>
+            <div className="column small-12 medium-6">
               <div id="map" ref="mapContainer"></div>
             </div>
 
@@ -270,7 +268,8 @@ class TripShowContainer extends Component {
         </div>
 
 
-        <Link data-confirm="Are you sure?" onClick={this.handleTripDelete}>Delete Trip</Link>
+
+
       </div>
     )
   }

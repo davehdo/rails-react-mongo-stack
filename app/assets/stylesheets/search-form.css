@@ -17,3 +17,30 @@
 #search-form div.row {
   padding-top: 1em;
 }
+
+#search-form .search-field {
+  padding-right: 0;
+}
+
+.search-img img{
+  width: 100%;
+  height: 8em;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.callout.search-result-tile{
+  border-radius: 5px;
+}
+
+.search-result-tile button {
+  padding: .4em 2em .4em 2em;
+  font-family: 'Roboto';
+  font-size: 1em;
+  background-color: #E5474B;
+  border-width: 1px;
+  border-radius: 5px;
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+  transition: background-color 1s;
+}

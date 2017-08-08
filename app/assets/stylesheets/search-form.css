@@ -30,14 +30,27 @@
 }
 
 .callout.search-result-tile{
-  border-radius: 5px;
+  /*border-radius: 5px;*/
+  padding: 0;
+  border: none;
+  height: 20em;
+}
+
+.search-result-tile h6 {
+  font-family: 'Open Sans';
+  color: #E5474B;
+}
+
+.search-result-tile .search-inner {
+  padding: .5em;
+  text-align: center;
 }
 
 .search-result-tile button {
   padding: .4em 2em .4em 2em;
   font-family: 'Roboto';
   font-size: 1em;
-  background-color: #E5474B;
+  background-color: #EC7578;
   border-width: 1px;
   border-radius: 5px;
   border-color: #FFFFFF;

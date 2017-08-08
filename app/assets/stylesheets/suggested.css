@@ -9,7 +9,7 @@
 #suggested-container div.callout {
   background-color: #E5474B;
   border: 1.5px solid #EC7578;
-  border-radius: 5px;
+  /*border-radius: 5px;*/
   text-align: center;
   height: 15em;
 }
@@ -29,7 +29,8 @@
 
 #suggested-container h6 {
   color: #FFFFFF;
-  font-weight: 500;
+  /*font-weight: 600;*/
+  font-family: 'Open Sans';
 }
 
 #suggested-container h4 {
@@ -41,6 +42,7 @@
 #suggested-container p {
   color: #FFFFFF;
   font-weight: 450;
+  font-family: 'Roboto';
 }
 
 #suggested-container a {
@@ -64,4 +66,10 @@
 .circle img {
   width: 100%;
   height: 100%;
+}
+
+.add-container {
+  /*position: absolute;
+  bottom: 3px;
+  margin: auto;*/
 }

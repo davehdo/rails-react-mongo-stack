@@ -3,10 +3,11 @@
 }
 
 .trip-title h1 {
-  font-family: 'Passion One';
+  font-family: 'Open Sans';
+  font-weight: 600;
   color: #E5474B;
   display: inline-block;
-  margin: 0 0 1em .5em;
+  margin: 0 0 .5em .5em;
 }
 
 .trip-title p {

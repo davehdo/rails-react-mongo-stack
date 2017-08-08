@@ -228,6 +228,10 @@ class TripShowContainer extends Component {
           <div className="row">
 
             <div className="column small-12 medium-6">
+              <div id="map" ref="mapContainer"></div>
+            </div>
+
+            <div className="column small-12 medium-6">
               <div className="row">
                 <form onSubmit={this.handleSearchSubmit}>
                   <div className="column small-10 search-field">
@@ -251,10 +255,6 @@ class TripShowContainer extends Component {
               <div className="row">
                 {searchResults}
               </div>
-            </div>
-
-            <div className="column small-12 medium-6">
-              <div id="map" ref="mapContainer"></div>
             </div>
 
           </div>

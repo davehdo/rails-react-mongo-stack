@@ -27,10 +27,11 @@ const SuggestedTile = props => {
 
         <h6>{props.restaurant.name}</h6>
         <p>Rating: {props.restaurant.rating}</p>
-        <a href={props.restaurant.url}>Learn More</a><br/>
 
-        <button type="button" onClick={handleAddClick}>Add</button>
-
+        <div className="add-container">
+          <a href={props.restaurant.url}>Learn More</a><br/>
+          <button type="button" onClick={handleAddClick}>Add</button>
+        </div>
       </div>
     </div>
 

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import TripTile from '../components/TripTile'
-import NewTripFormContainer from './NewTripFormContainer'
+import TripTile from '../components/TripTile';
+import NewTripFormContainer from './NewTripFormContainer';
+import Footer from '../components/Footer';
+
 
 class TripsIndexContainer extends Component {
   constructor(props) {
@@ -95,13 +97,7 @@ class TripsIndexContainer extends Component {
 
 
         <div className="column footer">
-          <hr/>
-          <div className="github">
-            <i className="fa fa-github" aria-hidden="true"></i>
-            <p>github.com/laurado</p><br/>
-            <i className="fa fa-linkedin-square" aria-hidden="true"></i>
-            <p>linkedin.com/in/laura-do</p><br/>
-          </div>
+          <Footer />
         </div>
 
 

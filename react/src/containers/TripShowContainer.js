@@ -3,6 +3,7 @@ import { Link, withRouter } from 'react-router';
 import RestaurantTile from '../components/RestaurantTile';
 import SuggestedTile from '../components/SuggestedTile';
 import SearchResultTile from '../components/SearchResultTile';
+import Footer from '../components/Footer';
 
 class TripShowContainer extends Component {
   constructor(props) {
@@ -269,13 +270,7 @@ class TripShowContainer extends Component {
 
         <div className="column footer">
           <div className="row">
-            <hr/>
-            <div className="github">
-              <i className="fa fa-github" aria-hidden="true"></i>
-              <p>github.com/laurado</p><br/>
-              <i className="fa fa-linkedin-square" aria-hidden="true"></i>
-              <p>linkedin.com/in/laura-do</p><br/>
-            </div>
+            <Footer />
           </div>
         </div>
 

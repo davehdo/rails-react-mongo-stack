@@ -30,7 +30,7 @@ const SearchResultTile = props => {
           <p>Rating: {props.restaurant.rating}</p>
 
           <div className="add-container">
-            <a href={props.restaurant.url}>Learn More</a><br/>
+            <a href={props.restaurant.url} target="_blank">Learn More</a><br/>
             <button type="button" onClick={handleAddClick}>Add</button>
           </div>
         </div>

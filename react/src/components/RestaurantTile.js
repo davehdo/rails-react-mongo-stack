@@ -20,7 +20,7 @@ const RestaurantTile = props => {
             <h4>{props.restaurant.name}</h4>
             <p>{props.restaurant.address}<br/>
             {props.restaurant.city}, {props.restaurant.state} {props.restaurant.zip}</p>
-            <a href={props.restaurant.url}>Learn More</a><br/>
+            <a href={props.restaurant.url} target="_blank">Learn More</a><br/>
             <div className="delete"><a onClick={handleRestaurantDelete}>Delete</a></div>
           </div>
         </div>

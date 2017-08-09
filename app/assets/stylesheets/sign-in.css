@@ -1,6 +1,6 @@
 #sign-in {
   background-color: #E5474B;
-  padding: 1em 5em;
+  padding: 1em 5em 0 5em;
 
 }
 
@@ -17,6 +17,7 @@
 
 #sign-in .actions input {
   margin-top: 1em;
+  margin-bottom: 2em;
   background-color: red;
   padding: 1em 2em;
   border: 1px solid #FFFFFF;
@@ -61,4 +62,14 @@
     color: #E5474B;
     font-family: 'Roboto';
     font-size: 1.2em;
+  }
+
+a.password {
+  color: #EC7578;
+  border-bottom: 1px dotted #EC7578;
+}
+
+  a.password:hover {
+    color: #FFFFFF;
+    border-bottom: none;
   }

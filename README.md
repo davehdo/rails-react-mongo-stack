@@ -3,24 +3,34 @@
 [![Coverage Status](https://coveralls.io/repos/github/laurado/hungry-travels/badge.svg)](https://coveralls.io/github/laurado/hungry-travels)
 
 
-# README
+# Hungry Travels
+As a new web developer, I am particularly interested in utilizing external APIs to bring outside information into my apps. During this project, I was able to really dig into the Yelp and Google Maps APIs.
 
-This repository has all the code necessary for starting a React on Rails application
-including testing. To get started, just clone the repository down and get started using
-React on Rails like you normally would.
+This mobile friendly app helps you plan restaurants to visit when you travel. It allows you to create itineraries for different trips and add restaurants to them. It also displays a map with pins in the location of restaurants you've added. It generates suggestions based on the city you're visiting and allows you to search for a specific restaurant.
 
-## Areas in the Boilerplate to Update
-Be sure to search `boilerplate` within your project and update any references to
-boilerplate with the name of your application. If you do not follow this step, your
-application may not behave the way that you expect it to.
+## Technologies
+* React.js Front End with React Router to prevent page reloads
+* Ruby on Rails back end with PostgreSQL database
+* Yelp and Google Maps external APIs
+* Mobile First design
 
-## Ideas for Getting Started
-Potential places to start for a side project:
-* Find an API that interests you and display the information in an interesting way
-* Make a clone of a website that already exists
-* Make a game that users can play on a website
-* Extend an assignment that you've already done to add additional features
+## Setup
+To get set up, clone this repository and run:
+```
+bundle
+rake db:create
+rake db:migrate
+rails s
+```
 
-No idea is too small, weird or insignificant to get started with. If you're interested
-in the project, you'll keep working on it and learn a lot about coding. Download the
-boilerplate, make those first commits and enjoy!
+In a separate terminal window, run:
+```
+npm install
+npm start
+```
+
+## Ideas 
+Potential ideas to implement in the future:
+* Add Carrierwave and AWS cloud storage to upload profile photo
+* Remove added restaurants from suggested list
+* Add OpenTable API to make reservations

@@ -4,54 +4,69 @@
       <h1>Hungry Travels</h1>
       <p>An app for traveling food lovers</p>
     </header>
-    <p>Already a user?</p>
     <a href="#sign-up" class="more scrolly">Sign Up</a>
   </div>
 </section>
 
-<div>
-  <p>Already a user?</p>
+<div class="other-links">
+  <h1 class="text-center">Already a User?</h1>
   <a href="/users/sign_in" class="more scrolly">Sign In</a>
 </div>
 
-<div id="sign-up"
+<div id="sign-in">
   <h2>Sign up</h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
 
-    <div class="field">
-      <%= f.label :first_name, 'First Name' %>
-      <%= f.text_field :first_name, autofocus: true %>
+  <div class="row">
+    <div class="column small-12 medium-6 first_name">
+      <div class="field">
+        <%= f.label :first_name, 'First Name' %>
+        <%= f.text_field :first_name, autofocus: true %>
+      </div>
     </div>
 
-    <div class="field">
-      <%= f.label :last_name, 'Last Name' %>
-      <%= f.text_field :last_name, autofocus: true %>
+    <div class="column small-12 medium-6">
+      <div class="field">
+        <%= f.label :last_name, 'Last Name' %>
+        <%= f.text_field :last_name, autofocus: true %>
+      </div>
     </div>
 
-    <div class="field">
-      <%= f.label :email %>
-      <%= f.email_field :email, autofocus: true %>
-    </div>
+      <div class="column">
+        <div class="field">
+          <%= f.label :email %>
+          <%= f.email_field :email, autofocus: true %>
+        </div>
 
-    <div class="field">
-      <%= f.label :password %>
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "off" %>
-    </div>
+        <div class="field">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "off" %>
+        </div>
 
-    <div class="field">
-      <%= f.label :password_confirmation, 'Password Confirmation'%>
-      <%= f.password_field :password_confirmation, autocomplete: "off" %>
-    </div>
+        <div class="field">
+          <%= f.label :password_confirmation, 'Password Confirmation'%>
+          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        </div>
 
-    <div class="actions">
-      <%= f.submit "Sign Up" %>
+        <div class="actions">
+          <%= f.submit "Sign Up" %>
+        </div>
+        <% end %>
     </div>
-  <% end %>
+  </div>
+</div>
 
-  <%= render "devise/shared/links" %>
+<div class="column footer">
+  <hr/>
+  <div class="github">
+    <i class="fa fa-github" aria-hidden="true"></i>
+    <p>github.com/laurado</p><br/>
+    <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+    <p>linkedin.com/in/laura-do</p><br/>
+  </div>
 </div>

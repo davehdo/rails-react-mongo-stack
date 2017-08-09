@@ -8,36 +8,51 @@
   </div>
 </section>
 
-<div>
-  <p>New user?</p>
+<div class="other-links">
+  <h1 class="text-center">New User?</h1>
   <a href="/users/sign_up" class="more scrolly">Sign Up</a>
 </div>
 
 <div id="sign-in">
-  <h2>Log in</h2>
+  <div>
+    <h2>Sign in</h2>
 
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="field">
-      <%= f.label :email %>
-      <%= f.email_field :email, autofocus: true %>
-    </div>
-
-    <div class="field">
-      <%= f.label :password %>
-      <%= f.password_field :password, autocomplete: "off" %>
-    </div>
-
-    <% if devise_mapping.rememberable? -%>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true %>
       </div>
-    <% end -%>
 
-    <div class="actions">
-      <%= f.submit "Sign In" %>
-    </div>
-  <% end %>
+      <div class="field">
+        <%= f.label :password %>
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
 
-  <%= render "devise/shared/links" %>
+      <% if devise_mapping.rememberable? -%>
+        <div class="field">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+      <% end -%>
+
+      <div class="actions">
+        <%= f.submit "Sign In" %>
+      </div>
+    <% end %>
+
+  </div>
 </div>
+
+
+<div class="column footer">
+  <hr/>
+  <div class="github">
+    <i class="fa fa-github" aria-hidden="true"></i>
+    <p>github.com/laurado</p><br/>
+    <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+    <p>linkedin.com/in/laura-do</p><br/>
+  </div>
+</div>
+
+
+<%= render "devise/shared/links" %>

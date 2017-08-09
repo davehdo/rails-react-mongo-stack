@@ -13,7 +13,7 @@ feature "Authenticated user can sign out" do
     user = FactoryGirl.create(:user)
 
     visit new_user_session_path
-    expect(page).to have_content "Log in"
+    expect(page).to have_content "Sign in"
 
     fill_in "Password", with: user.password
     fill_in "Email", with: user.email

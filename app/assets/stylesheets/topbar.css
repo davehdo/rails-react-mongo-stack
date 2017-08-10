@@ -36,7 +36,8 @@ ul.menu {
 
 .dropdown-content {
     display: none;
-    position: absolute;
+    /*position: absolute;*/
+    position: fixed;
     right: 2px;
     /*background-color: #f9f9f9;*/
     background-color: #42424f;

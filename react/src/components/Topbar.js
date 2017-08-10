@@ -13,13 +13,9 @@ class Topbar extends Component {
     return (
       <div>
         <div className="top-bar">
-          <div className="top-bar-left">
+
             <Link to="/"><i className="fa fa-home" aria-hidden="true"></i></Link>
-            <ul className="menu">
-            </ul>
-          </div>
-
-
+          
 
           <div className="top-bar-right">
             <div className="dropdown">
@@ -27,11 +23,10 @@ class Topbar extends Component {
               <div className="dropdown-content">
                 <a data-method="delete" href="/users/sign_out">Sign Out</a>
                 <a href="/users/edit">Edit Profile</a>
-
               </div>
             </div>
-
           </div>
+
         </div>
         {this.props.children}
       </div>

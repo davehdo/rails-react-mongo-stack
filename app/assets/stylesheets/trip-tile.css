@@ -3,6 +3,11 @@
   border: none;
 }
 
+div#main.column {
+  padding-left: 3em;
+  padding-right: 3em;
+}
+
 #main img {
   width: 100%;
 }

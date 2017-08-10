@@ -27,6 +27,7 @@ ul.menu {
 .dropdown {
     position: relative;
     display: inline-block;
+    float: right;
 }
 
   .dropdown:hover .dropdown-content {
@@ -54,4 +55,11 @@ ul.menu {
   .dropdown-content a:hover {
     /*background-color: #f1f1f1;*/
     color: #FFFFFF;
+  }
+
+  .top-bar .top-bar-right {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0;
+    flex: none;
+    max-width: 100%;
   }

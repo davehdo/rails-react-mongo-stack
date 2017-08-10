@@ -1,12 +1,17 @@
 #sign-in {
   background-color: #E5474B;
   padding: 1em 5em 0 5em;
-
 }
+  @media screen and (max-width: 736px) {
+    #sign-in {
+      padding: 1em 2em 0 2em;
+    }
+  }
 
 #sign-in h2 {
   color: #FFFFFF;
   font-family: 'Open Sans';
+  padding-bottom: 1em;
 }
 
 #sign-in label {

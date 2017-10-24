@@ -59,15 +59,4 @@ describe('TripsIndexContainer', () => {
       expect(wrapper.find(NewTripFormContainer)).toBePresent
     })
   });
-
-  // it('should set the state to ""', () => {
-  //   // set initial state
-  //   let state = {newCity: "Chicago", newState: "IL", newDate: "10/20/18"}
-  //   wrapper.setState( state )
-  //   // create an event object to pass into handleClearForm
-  //   let event = jasmine.createSpyObj('event', ['preventDefault'])
-  //
-  //   wrapper.instance().handleClearForm(event)
-  //   expect(wrapper.state()).toEqual({trips: [], newCity: "", newState: "", newDate: ""})
-  // });
 });

@@ -17,9 +17,13 @@ class Api::V1::TripsController < ApplicationController
 
   def create
     body = request.body.read
-    parsed = JSON.parse(body)
-    trip = Trip.new(parsed)
+    parsed_body = JSON.parse(body)
+    trip = Trip.new(parsed_body)
     trip.user = current_user
+    if parsed_body["start_date"]
+      start_date = Date.parse(parsed_body["start_date"].gsub("/", " "))
+      trip.start_date = start_date
+    end 
 
     if trip.save
       render json: trip, adapter: :json

@@ -1,6 +1,6 @@
 import NewTripFormContainer from '../../src/containers/NewTripFormContainer'
 
-fdescribe('NewTripFormContainer', () => {
+describe('NewTripFormContainer', () => {
   let wrapper;
 
   beforeEach(() => {

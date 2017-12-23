@@ -12,11 +12,8 @@
 
 ActiveRecord::Schema.define(version: 20170806210520) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "restaurants", force: :cascade do |t|
-    t.bigint "trip_id"
+    t.integer "trip_id"
     t.string "name", null: false
     t.string "address"
     t.string "city", null: false
@@ -32,7 +29,7 @@ ActiveRecord::Schema.define(version: 20170806210520) do
   end
 
   create_table "trips", force: :cascade do |t|
-    t.bigint "user_id"
+    t.integer "user_id"
     t.string "city", null: false
     t.string "state"
     t.string "date"
@@ -56,8 +53,8 @@ ActiveRecord::Schema.define(version: 20170806210520) do
     t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.inet "current_sign_in_ip"
-    t.inet "last_sign_in_ip"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

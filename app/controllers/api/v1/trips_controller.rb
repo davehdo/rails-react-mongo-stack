@@ -10,17 +10,17 @@ class Api::V1::TripsController < ApplicationController
 
   def show
     trip = Trip.find(params[:id])
-    restaurants = trip.restaurants
+    # restaurants = trip.restaurants
 
-    render json: {trip: trip, restaurants: restaurants}, adapter: :json
+    render json: {trip: trip, restaurants: []}, adapter: :json
   end
 
   def create
     body = request.body.read
     parsed_body = JSON.parse(body)
     trip = Trip.new(parsed_body)
-    trip.user = current_user
-    if parsed_body["start_date"]
+    # trip.user = current_user
+    if parsed_body["start_date"] and parsed_body["start_date"] != ""
       start_date = Date.parse(parsed_body["start_date"].gsub("/", " "))
       trip.start_date = start_date
     end 

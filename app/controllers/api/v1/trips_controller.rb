@@ -3,8 +3,8 @@ class Api::V1::TripsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    user = current_user
-    trips = user.trips
+    # user = current_user
+    trips = Trip.all
     render json: trips, adapter: :json
   end
 

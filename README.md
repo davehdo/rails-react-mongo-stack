@@ -11,7 +11,13 @@ This was forked from ![Hungry Travels](https://github.com/laurado/hungry-travels
 * Modern, minimalist styling with clear design pattern to make UX easier to navigate
 
 ## Setup
-To get set up, clone this repository, then make sure you have the right ruby version, as listed in Gemfile
+This assumes you have the following installed
+* the right ruby version, as listed in Gemfile
+* node.js 
+* yarn for dependency management
+
+
+To get set up, clone this repository, then run
 ```
 bundle (or if this command does not work then gem install bundler)
 rake db:create
@@ -23,7 +29,7 @@ To install the necessary javascript packages
 npm install
 ```
 
-Install yarn
+
 
 ## Running locally
 ```

@@ -10,6 +10,7 @@
 * React.js Front End with React Router to prevent page reloads
 * Ruby on Rails back end with PostgreSQL database
 * Mobile First design
+* Devise authentication
 * Modern, minimalist styling with clear design pattern to make UX easier to navigate
 
 ## Setup
@@ -26,6 +27,11 @@ In a separate terminal window, run:
 npm install
 npm start
 ```
+
+## File Structure
+* the front end files are located in ```/react```
+* the back end files are located in ```/app```
+** Where they meet, React is launched from ```/app/views/static_pages/index.html.erb```
 
 # Testing
 ## Server side testing

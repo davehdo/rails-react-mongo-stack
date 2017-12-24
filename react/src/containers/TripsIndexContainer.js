@@ -73,7 +73,7 @@ class TripsIndexContainer extends Component {
         <section id="banner">
           <div className="inner">
             <header>
-              <h1>Hungry Travels</h1>
+              <h1>Rails React Stack</h1>
               <p>An app for traveling food lovers</p>
             </header>
             <a href="#main" className="more scrolly">Get Started</a>

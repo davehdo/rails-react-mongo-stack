@@ -17,7 +17,7 @@ describe('TripsIndexContainer', () => {
   describe('banner', () => {
     it('should render a h1 tag with the title', () => {
       expect(wrapper.find('h1')).toBePresent();
-      expect(wrapper.find('h1').text()).toBe('Hungry Travels');
+      expect(wrapper.find('h1').text()).toBe('Rails React Stack');
     });
 
     it('should render a p tag with the description', () => {

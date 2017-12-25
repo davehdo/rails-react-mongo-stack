@@ -81,6 +81,7 @@ class TripsIndexContainer extends Component {
         </section>
 
         <div id="main" className="column">
+          <h3>Showing Trips</h3>
           <div className="row">
             {trips}
           </div>
@@ -88,7 +89,7 @@ class TripsIndexContainer extends Component {
 
         <div className="column form-container">
           <div className="row small-12 medium-8">
-            <h3>Where are you traveling?</h3>
+            <h3>Create a New Trip</h3>
             <NewTripFormContainer
               addNewTrip={this.addNewTrip}
             />

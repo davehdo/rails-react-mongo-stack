@@ -8,7 +8,6 @@ const App = props => {
   return (
     <Router history={browserHistory}>
       <Route path='/' component={Topbar}>
-        <p>App.js</p>
         <IndexRoute component={TripsIndexContainer}/>
         <Route path='/trips' component={TripsIndexContainer}/>
         <Route path='/trips/:id' component={TripShowContainer}/>

@@ -13,5 +13,4 @@ Rails.application.routes.draw do
   get 'trips' => 'static_pages#index'
   get 'trips/:id' => 'static_pages#index'
 
-  resources :yelp, only: [:index, :create]
 end

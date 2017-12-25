@@ -21,6 +21,7 @@ class Topbar extends Component {
             <div className="dropdown">
               <i className="fa fa-bars" aria-hidden="true"></i>
               <div className="dropdown-content">
+                <a href="/users/sign_in">Sign In</a>
                 <a data-method="delete" href="/users/sign_out">Sign Out</a>
                 <a href="/users/edit">Edit Profile</a>
               </div>

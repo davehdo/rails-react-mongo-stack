@@ -1,6 +1,6 @@
 This was forked from [Hungry Travels](https://github.com/laurado/hungry-travels)
 
-# Rails, React, and SQLite stack
+# Rails, React, and Mongo stack
 
 
 ## Technologies
@@ -29,7 +29,7 @@ To install the necessary javascript packages
 npm install
 ```
 
-
+Update mongoid.yml to define the name of the database, to avoid interfering with other projects
 
 ## Running locally
 ```

@@ -15,6 +15,7 @@ gem 'jquery-rails'
 gem 'listen'
 gem 'http'
 gem 'rails-assets-foundation', source: 'https://rails-assets.org'
+gem "nokogiri", "~> 1.8.1" # to avoid a known security vulnerability with 1.8.0, a dependency of a few of the testing platforms
 
 group :development, :test do
   gem 'capybara'

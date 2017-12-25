@@ -1,4 +1,4 @@
-This was forked from ![Hungry Travels](https://github.com/laurado/hungry-travels)
+This was forked from [Hungry Travels](https://github.com/laurado/hungry-travels)
 
 # Rails, React, and SQLite stack
 
@@ -12,14 +12,14 @@ This was forked from ![Hungry Travels](https://github.com/laurado/hungry-travels
 
 ## Setup
 This assumes you have the following installed
-* the right ruby version, as listed in Gemfile
+* ruby - the correct version, as listed in Gemfile
 * node.js 
-* yarn for dependency management
+* yarn - for dependency management
 
 
 To get set up, clone this repository, then run
 ```
-bundle (or if this command does not work then gem install bundler)
+bundle (or if this command does not work then first run gem install bundler)
 rake db:create
 rake db:migrate
 ```
@@ -44,17 +44,16 @@ npm start
 ## File Structure
 * the front end files are located in ```/react```
 * the back end files are located in ```/app```
-** Where they meet, React is launched from ```/app/views/static_pages/index.html.erb```
+* Where they meet, React is launched from ```/app/views/static_pages/index.html.erb```
 
 # Testing
 ## Server side testing
-no installation necessary
+No installation necessary. Just run:
 ```bundle exec rspec .```
 
 ## Client side testing
 First, install Karma
 ```
-npm install --save-dev jasmine-core karma karma-jasmine
 npm install -g karma-cli
 ```
 Then run

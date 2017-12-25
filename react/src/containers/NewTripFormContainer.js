@@ -59,6 +59,7 @@ class NewTripFormContainer extends Component {
       city: this.state.newCity,
       state: this.state.newState,
       date: this.state.newDate,
+      tags_serial: this.state.tags_serial,
       start_date: selectedDate
     };
     this.props.addNewTrip(formPayload);
@@ -95,6 +96,7 @@ class NewTripFormContainer extends Component {
           </div>
         </div>
 
+                
         <label onChange={this.handleChange}>Start Date
           <input
             type='text'
@@ -105,6 +107,19 @@ class NewTripFormContainer extends Component {
           />
         </label>
 
+        <div className="row">
+      
+          <div className="column small-6">
+            <label onChange={this.handleChange}>Tags
+              <input
+                name='tags_serial'
+                type='text'
+                value={this.state.tags_serial}
+              />
+            </label>
+          </div>
+        </div>
+            
         <div className="button-group">
           <input className="button" type="submit" value="Submit" />
         </div>

@@ -36,9 +36,11 @@ class Api::V1::TripsController < ApplicationController
     render json: { trip: trip }
   end
 
+
+  
   private
 
   def trip_params
-    params.permit(:city, :state, :start_date)
+    params.permit(:city, :state, :start_date, :tags_serial)
   end
 end

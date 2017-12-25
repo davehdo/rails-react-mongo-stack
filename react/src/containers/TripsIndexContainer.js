@@ -58,10 +58,11 @@ class TripsIndexContainer extends Component {
   render() {
 
     let trips = this.state.trips.map(trip => {
+
       return (
         <TripTile
-          key={trip.id}
-          id={trip.id}
+          key={trip.id.$oid}
+          id={trip.id.$oid}
           city={trip.city}
         />
       )

@@ -1,5 +1,5 @@
 class TripSerializer < ActiveModel::Serializer
-  attributes :id, :city, :state, :date, :start_date, :formatted_date
+  attributes :id, :city, :state, :start_date, :formatted_date
 
   def formatted_date
     if object.start_date

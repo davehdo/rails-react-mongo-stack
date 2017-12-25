@@ -7,7 +7,7 @@ gem 'geocoder'
 gem 'rails', '~> 5.1.2'
 # gem 'pg', '~> 0.15'
 gem "sqlite3"
-
+gem 'mongoid', '~> 6.1.0'
 
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'

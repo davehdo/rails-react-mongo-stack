@@ -48,6 +48,7 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
     bcrypt (3.1.11)
+    bson (4.2.2)
     builder (3.2.3)
     capybara (2.16.1)
       addressable
@@ -124,6 +125,11 @@ GEM
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     minitest (5.10.3)
+    mongo (2.4.3)
+      bson (>= 4.2.1, < 5.0.0)
+    mongoid (6.1.1)
+      activemodel (~> 5.0)
+      mongo (>= 2.4.1, < 3.0.0)
     nio4r (2.1.0)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
@@ -270,6 +276,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   listen
+  mongoid (~> 6.1.0)
   nokogiri (~> 1.8.1)
   pry-rails
   rails (~> 5.1.2)

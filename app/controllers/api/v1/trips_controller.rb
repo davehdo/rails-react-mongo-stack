@@ -17,8 +17,8 @@ class Api::V1::TripsController < ApplicationController
 
   def create
     trip = Trip.new(trip_params)
-    # trip.user = current_user
-    if trip_params[:start_date]
+
+    if trip_params[:start_date] and trip_params[:start_date] != ""
       start_date = Date.strptime(trip_params[:start_date], '%m/%d/%Y')
       trip.start_date = start_date
     end 
@@ -39,6 +39,6 @@ class Api::V1::TripsController < ApplicationController
   private
 
   def trip_params
-    params.permit(:city, :state, :date, :start_date)
+    params.permit(:city, :state, :start_date)
   end
 end

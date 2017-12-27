@@ -55,16 +55,15 @@ RSpec.describe Api::V1::TripsController, type: :controller do
   end
 
   describe "POST#create" do
-    it "should create a trip with the correct info if the user is signed in" do
-      user = FactoryGirl.create(:user)
+    it "should create a trip with the correct info " do
+      # user = FactoryGirl.create(:user)
 
       post_json = {
         city: "Boston",
         state: "MA",
-        user_id: user.id
       }.to_json
 
-      sign_in user
+      # sign_in user
 
       expect { post(:create, body: post_json) }.to change { Trip.count }.by 1
       post(:create, body: post_json)

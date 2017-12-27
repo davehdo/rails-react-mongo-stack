@@ -19,10 +19,9 @@ This assumes you have the following installed
 
 To get set up, clone this repository, then run
 ```
-bundle (or if this command does not work then first run gem install bundler)
-rake db:create
-rake db:migrate
+bundle 
 ```
+(or if this command does not work then first run gem install bundler).
 
 To install the necessary javascript packages
 ```

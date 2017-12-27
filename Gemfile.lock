@@ -68,6 +68,7 @@ GEM
       thor (~> 0.19.4)
       tins (~> 1.6)
     crass (1.0.3)
+    database_cleaner (1.6.2)
     devise (4.3.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -268,6 +269,7 @@ DEPENDENCIES
   active_model_serializers
   capybara
   coveralls
+  database_cleaner
   devise
   dotenv-rails
   factory_girl_rails

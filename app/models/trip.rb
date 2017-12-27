@@ -4,7 +4,7 @@ class Trip
   # belongs_to :user
   # has_many :restaurants
 
-  field :user_id, type: Integer
+  # field :user_id, type: Integer
   field :city, type: String
   field :state, type: String
   field :lat, type: Float

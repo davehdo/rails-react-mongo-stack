@@ -53,4 +53,4 @@ Then run
 ```npm test```
 
 ## Deploying
-Just push to heroku and then provision a mLab MongoDB resource.
+Just push to heroku and then provision a mLab MongoDB resource. This will define an environment variable MONGODB_URI.

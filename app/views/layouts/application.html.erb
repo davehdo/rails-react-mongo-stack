@@ -19,14 +19,9 @@
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
     <% end %> -->
+    <div class="grid-container fluid">
+      <%= yield %>
+    </div>
 
-    <%= yield %>
-
-    <script>
-      // this is a dummy function that google maps looks for in order to initialize the map, however, I prefer to initialize in react
-      function initMap() {}
-    </script>
-    <!-- <script src="http://chrisdavies.github.io/tiny-date-picker/tiny-date-picker.js"></script> -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA42lCf6ZJBzOF2HGN2Oh-eonCGNxueHAY&callback=initMap" async defer></script>
   </body>
 </html>

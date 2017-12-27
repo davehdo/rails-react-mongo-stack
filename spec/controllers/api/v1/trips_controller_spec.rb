@@ -5,6 +5,7 @@ RSpec.describe Api::V1::TripsController, type: :controller do
   describe "GET#index" do
     it "should return a list of all trips" do
       # user = FactoryGirl.create(:user)
+
       trip1 = FactoryGirl.create(:trip)
       trip2 = FactoryGirl.create(:trip)
 

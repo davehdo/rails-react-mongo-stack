@@ -5,9 +5,9 @@ This was forked from [Hungry Travels](https://github.com/laurado/hungry-travels)
 
 ## Technologies
 * React.js Front End with React Router to prevent page reloads
-* Ruby on Rails back end with PostgreSQL database
-* Mobile First design
+* Ruby on Rails 
 * Devise authentication
+* Mobile First design
 * Modern, minimalist styling with clear design pattern to make UX easier to navigate
 
 ## Setup
@@ -17,16 +17,10 @@ This assumes you have the following installed
 * yarn - for dependency management
 
 
-To get set up, clone this repository, then run
-```
-bundle 
-```
+To get set up, clone this repository, then run ```bundle```
 (or if this command does not work then first run gem install bundler).
 
-To install the necessary javascript packages
-```
-npm install
-```
+To install the necessary javascript packages ```npm install```
 
 Update mongoid.yml to define the name of the database, to avoid interfering with other projects
 

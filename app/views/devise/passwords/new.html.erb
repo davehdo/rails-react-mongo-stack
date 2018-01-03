@@ -1,47 +1,30 @@
-<section id="banner">
-  <div class="inner">
-    <header>
-      <h1>Rails React Stack</h1>
-      <p>An app for traveling food lovers</p>
-    </header>
-    <!-- <a href="#sign-up" class="more scrolly">Sign Up</a> -->
-  </div>
-</section>
 
-<div class="other-links row">
-  <div class="column small-6">
-    <h1 class="text-center">New User?</h1>
-    <a href="/users/sign_up" class="more scrolly">Sign up</a>
-  </div>
-  <div class="column small-6">
-    <h1 class="text-center">Already a User?</h1>
-    <a href="/users/sign_in" class="more scrolly">Sign in</a>
-  </div>
-</div>
+<div class="grid-x grid-padding-x">
+  <div class="cell">
 
-<div id="sign-in">
-  <h2>Forgot your password?</h2><br/>
 
-  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-    <%= devise_error_messages! %>
+    <div id="sign-in">
+      <h2>Forgot your password?</h2><br/>
 
-    <div class="field">
-      <%= f.label :email %>
-      <%= f.email_field :email, autofocus: true %>
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div class="field">
+          <%= f.label :email %>
+          <%= f.email_field :email, autofocus: true %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Send me reset password instructions" %>
+        </div>
+      <% end %>
     </div>
+    
+    <br />
+    
 
-    <div class="actions">
-      <%= f.submit "Send me reset password instructions" %>
+    <div>
+      <span class="text-center">Already a User?</span> <a href="/users/sign_in" class="more scrolly">Sign in</a>
     </div>
-  <% end %>
-</div>
-
-<div class="column footer">
-  <hr/>
-  <div class="github">
-    <i class="fa fa-github" aria-hidden="true"></i>
-    <p>github.com/laurado</p><br/>
-    <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-    <p>linkedin.com/in/laura-do</p><br/>
   </div>
 </div>

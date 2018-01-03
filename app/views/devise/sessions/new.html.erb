@@ -1,54 +1,44 @@
-<section id="banner">
-  <div class="inner">
-    <header>
-      <h1>Rails React Stack</h1>
-      <p>An app for traveling food lovers</p>
-    </header>
-    <a href="#sign-in" class="more scrolly">Sign In</a>
-  </div>
-</section>
 
-<div class="other-links">
-  <h1 class="text-center">New User?</h1>
-  <a href="/users/sign_up" class="more scrolly">Sign Up</a>
-</div>
+<div class="grid-x grid-padding-x">
+  <div class="cell">
 
-<div id="sign-in">
-  <div>
-    <h2>Sign in</h2>
 
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="field">
-        <%= f.label :email %>
-        <%= f.email_field :email, autofocus: true %>
-      </div>
+    <div id="sign-in">
+      <div>
+        <h2>Sign in</h2>
 
-      <div class="field">
-        <%= f.label :password %>
-        <%= f.password_field :password, autocomplete: "off" %>
-      </div>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="field">
+            <%= f.label :email %>
+            <%= f.email_field :email, autofocus: true %>
+          </div>
 
-      <% if devise_mapping.rememberable? -%>
-        <div class="field">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
+          <div class="field">
+            <%= f.label :password %>
+            <%= f.password_field :password, autocomplete: "off" %>
+          </div>
+
+          <% if devise_mapping.rememberable? -%>
+            <div class="field">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
+            </div>
+          <% end -%>
+
+          <div class="actions">
+            <%= f.submit "Sign In", class: "button" %>
+          </div>
+        <% end %>
+        <a href="/users/password/new" class="password">Forgot your password?</a>
+        <div class="other-links">
+          <span class="text-center">New User?</span>
+          <a href="/users/sign_up" class="more scrolly">Sign Up</a>
         </div>
-      <% end -%>
-
-      <div class="actions">
-        <%= f.submit "Sign In" %>
+        
       </div>
-    <% end %>
-    <a href="/users/password/new" class="password">Forgot your password?</a>
+    </div>
+
   </div>
 </div>
 
-<div class="column footer">
-  <hr/>
-  <div class="github">
-    <i class="fa fa-github" aria-hidden="true"></i>
-    <p>github.com/laurado</p><br/>
-    <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-    <p>linkedin.com/in/laura-do</p><br/>
-  </div>
-</div>
+

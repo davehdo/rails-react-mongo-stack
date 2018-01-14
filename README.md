@@ -1,6 +1,7 @@
 This was forked from [Hungry Travels](https://github.com/laurado/hungry-travels)
 
 # Rails, React, and Mongo stack
+This employs a Rails back end and uses webpack to run a React front end. Webpack transpiles the React code into /app/javascripts/bundle.js, which is then served via the Rails asset pipeline.
 
 
 ## Technologies

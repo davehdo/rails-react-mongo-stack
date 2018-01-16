@@ -54,6 +54,26 @@ Then run
 ```npm test```
 
 ## Deploying
+1. Update mongoid.yml with the appropriate settings to connect to mLab
+```
+production:
+    clients:
+        default:
+            uri: "<%= ENV['MONGODB_URI'] %>"
+
+            options:
+                max_retries: 30
+                retry_interval: 1
+                timeout: 15
+                refresh_interval: 10
+```
+
+1.create database indexes
+```
+rake db:mongoid:create_indexes
+```
 1. Create a Heroku app
-2. Provision a mLab MongoDB resource. This will define an environment variable MONGODB_URI.
-3. Add a build pack for node.js, which will tell Heroku to ```npm run heroku-postbuild``` in order to transpile and minify the React components
+1. Provision a mLab MongoDB resource. This will define an environment variable MONGODB_URI.
+1. Add a build pack for node.js, which will tell Heroku to ```npm run heroku-postbuild``` in order to transpile and minify the React components
+
+

@@ -68,10 +68,8 @@ production:
                 refresh_interval: 10
 ```
 
-1.create database indexes
-```
-rake db:mongoid:create_indexes
-```
+1. Create database indexes
+```rake db:mongoid:create_indexes```
 1. Create a Heroku app
 1. Provision a mLab MongoDB resource. This will define an environment variable MONGODB_URI.
 1. Add a build pack for node.js, which will tell Heroku to ```npm run heroku-postbuild``` in order to transpile and minify the React components

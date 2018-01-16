@@ -7,6 +7,12 @@
 # Ignore bundler config.
 /.bundle
 
+# ignore node modules
+/node_modules/
+
+# ignore the webpack-transpiled React code used in dev
+/app/assets/javascripts/bundle.js
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
@@ -16,8 +22,6 @@
 # Ignore Byebug command history file.
 .byebug_history
 
-/node_modules
-/app/assets/javascripts/bundle.js
 /react/coverage
 /coverage
 /node_modules

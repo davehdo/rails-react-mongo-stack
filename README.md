@@ -54,4 +54,6 @@ Then run
 ```npm test```
 
 ## Deploying
-Just push to heroku and then provision a mLab MongoDB resource. This will define an environment variable MONGODB_URI.
+1. Create a Heroku app
+2. Provision a mLab MongoDB resource. This will define an environment variable MONGODB_URI.
+3. Add a build pack for node.js, which will tell Heroku to ```npm run heroku-postbuild``` in order to transpile and minify the React components

@@ -18,12 +18,9 @@ This assumes you have the following installed
 * yarn - for dependency management
 
 
-To get set up, clone this repository, then run ```bundle```
-(or if this command does not work then first run gem install bundler).
-
-To install the necessary javascript packages ```npm install```
-
-Update mongoid.yml to define the name of the database, to avoid interfering with other projects
+1. To get set up, clone this repository, then run ```bundle``` (or if this command does not work then first run gem install bundler).
+1. To install the necessary javascript packages ```npm install```
+1. Update mongoid.yml to define the name of the database, to avoid interfering with other projects
 
 ## Running locally
 ```

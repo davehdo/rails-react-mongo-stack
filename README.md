@@ -69,6 +69,6 @@ production:
 ```rake db:mongoid:create_indexes```
 1. Create a Heroku app
 1. Provision a mLab MongoDB resource. This will define an environment variable MONGODB_URI.
-1. Configure two buildpacks in Heroku. There should be a build pack for ```heroku/node.js```, which will tell Heroku to ```npm run heroku-postbuild``` in order to transpile and minify the React components. There should be a build back for ```heroku/ruby```. They must be placed in that order.
+1. Configure two buildpacks in Heroku. There should be a build pack for ```heroku/node.js```, which will tell Heroku to ```npm run heroku-postbuild``` in order to transpile and minify the React components and place them in the assets folder. There should be a build back for ```heroku/ruby``` which will tell Heroku to ```rake assets:precompile``` thereby taking items in the assets folder and compiling into one single javascript asset. They must be placed in that order. This is designed to be deployed to heroku with no manual compilation of javascript. 
 
 

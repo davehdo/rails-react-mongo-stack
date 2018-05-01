@@ -9,12 +9,14 @@ gem 'rails', '~> 5.1.2'
 # gem "sqlite3"
 gem 'mongoid', '~> 6.1.0'
 
+gem 'bootstrap-sass', '~> 3.3.7'
+
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'jquery-rails'
+gem 'jquery-rails' # bootstrap relies on this
 gem 'listen'
 gem 'http'
-gem 'rails-assets-foundation', source: 'https://rails-assets.org'
+
 gem "nokogiri", "~> 1.8.1" # to avoid a known security vulnerability with 1.8.0, a dependency of a few of the testing platforms
 
 group :development, :test do

@@ -75,7 +75,7 @@ class TripsIndexContainer extends Component {
           <div className="inner">
             <header>
               <h1>Rails React Stack</h1>
-              <p>An app for traveling food lovers</p>
+              <p>An app for traveling food lovers. If you can see this, the React part is working!</p>
             </header>
             <a href="#main" className="more scrolly">Get Started</a>
           </div>

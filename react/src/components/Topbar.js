@@ -13,21 +13,7 @@ class Topbar extends Component {
     return (
       <div>
         <div className="top-bar">
-
-            <Link to="/"><i className="fa fa-home" aria-hidden="true"></i></Link>
-          
-
-          <div className="top-bar-right">
-            <div className="dropdown">
-              <i className="fa fa-bars" aria-hidden="true"></i>
-              <div className="dropdown-content">
-                <a href="/users/sign_in">Sign In</a>
-                <a data-method="delete" href="/users/sign_out">Sign Out</a>
-                <a href="/users/edit">Edit Profile</a>
-              </div>
-            </div>
-          </div>
-
+          This is React-generated and common to all pages
         </div>
         {this.props.children}
       </div>
